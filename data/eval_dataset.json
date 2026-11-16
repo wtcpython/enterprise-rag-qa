@@ -1,0 +1,477 @@
+[
+  {
+    "id": "Q01",
+    "category": "direct_fact",
+    "query": "公司核心工作时段是几点到几点？每天午休时间是多长？",
+    "ground_truth_answer": "核心工作时段为每日 10:00—17:30；午休时间为 12:00—13:30，时长 1.5 小时。",
+    "expected_sources": [
+      "员工手册与考勤休假制度.md"
+    ],
+    "expected_doc_snippets": [
+      "核心工作时段为每日 10:00—17:30",
+      "午休 1.5 小时，午休时间为 12:00—13:30"
+    ],
+    "must_have_chunk_ids": [
+      "员工手册与考勤休假制度_16076c_000"
+    ]
+  },
+  {
+    "id": "Q02",
+    "category": "direct_fact",
+    "query": "员工每个自然月有几次轻微迟到豁免权？允许在什么时间段打卡不扣款？",
+    "ground_truth_answer": "每自然月享有 3 次轻微迟到豁免权，在 10:01—10:15 之间打卡每月前 3 次不扣款。",
+    "expected_sources": [
+      "员工手册与考勤休假制度.md"
+    ],
+    "expected_doc_snippets": [
+      "每自然月享有 3 次“轻微迟到豁免权”",
+      "10:01—10:15 之间打卡"
+    ],
+    "must_have_chunk_ids": [
+      "员工手册与考勤休假制度_16076c_001"
+    ]
+  },
+  {
+    "id": "Q03",
+    "category": "direct_fact",
+    "query": "司龄满3年但未满5年的正式员工，每年享有几天带薪年假？未休完的年假最晚可顺延到什么时候？",
+    "ground_truth_answer": "司龄满3年但未满5年每年享有 10 天带薪年假；当年未休完的年假可顺延至次年 3 月 31 日前休完。",
+    "expected_sources": [
+      "员工手册与考勤休假制度.md"
+    ],
+    "expected_doc_snippets": [
+      "司龄满 3 年但未满 5 年：每年享有 10 天带薪年假",
+      "次年 3 月 31 日前休完"
+    ],
+    "must_have_chunk_ids": [
+      "员工手册与考勤休假制度_16076c_002",
+      "员工手册与考勤休假制度_16076c_003"
+    ]
+  },
+  {
+    "id": "Q04",
+    "category": "direct_fact",
+    "query": "公司规定的一类差旅城市有哪些？普通员工（P4-P6）在一类城市的住宿报销上限是多少？",
+    "ground_truth_answer": "一类城市包括北京、上海、广州、深圳、杭州、成都；普通员工（P4-P6）在一类城市的住宿报销上限为 550 元/晚。",
+    "expected_sources": [
+      "差旅与费用报销管理规范.docx"
+    ],
+    "expected_doc_snippets": [
+      "北京、上海、广州、深圳、杭州、成都",
+      "550元/晚"
+    ],
+    "must_have_chunk_ids": [
+      "差旅与费用报销管理规范_e5d6c6_000",
+      "差旅与费用报销管理规范_e5d6c6_001"
+    ]
+  },
+  {
+    "id": "Q05",
+    "category": "direct_fact",
+    "query": "员工报销时开具发票的抬头和纳税人识别号（税号）分别是什么？未开具增值税专用发票的住宿费怎么报销？",
+    "ground_truth_answer": "发票抬头为“星云智联科技有限公司”，纳税人识别号为 91110108MA01XY9988。住宿费必须开具增值税专用发票，否则仅按票面金额的 90% 予以报销。",
+    "expected_sources": [
+      "差旅与费用报销管理规范.docx"
+    ],
+    "expected_doc_snippets": [
+      "91110108MA01XY9988",
+      "仅按票面金额的 90% 予以报销"
+    ],
+    "must_have_chunk_ids": [
+      "差旅与费用报销管理规范_e5d6c6_003"
+    ]
+  },
+  {
+    "id": "Q06",
+    "category": "direct_fact",
+    "query": "出差返程后需要在多少个工作日内提交报销单？超过30个自然日未提交会有什么后果？",
+    "ground_truth_answer": "须在返程后 15 个工作日内提交报销单；超过 30 个自然日未提交且无特殊说明者，财务部有权拒付或扣减 10% 报销额。",
+    "expected_sources": [
+      "差旅与费用报销管理规范.docx"
+    ],
+    "expected_doc_snippets": [
+      "返程后 15 个工作日内",
+      "扣减 10% 报销额"
+    ],
+    "must_have_chunk_ids": [
+      "差旅与费用报销管理规范_e5d6c6_003"
+    ]
+  },
+  {
+    "id": "Q07",
+    "category": "direct_fact",
+    "query": "公司内部系统账号密码的最小长度、字符种类要求以及强制更换周期分别是多少？",
+    "ground_truth_answer": "密码长度不得少于 12 位，必须同时包含大写字母、小写字母、数字和特殊符号四类中的至少三类；强制更换周期为 90 天，且不得与最近 5 次历史口令重复。",
+    "expected_sources": [
+      "IT信息安全与数据合规规范.pdf"
+    ],
+    "expected_doc_snippets": [
+      "密码长度不得少于 12 位",
+      "强制更换周期为 90 天"
+    ],
+    "must_have_chunk_ids": [
+      "IT信息安全与数据合规规范_9165fa_000"
+    ]
+  },
+  {
+    "id": "Q08",
+    "category": "direct_fact",
+    "query": "在公司数据分级分类规范中，L3机密级和L4绝密级分别包含哪些典型数据？",
+    "ground_truth_answer": "L3 机密级包含核心算法源码、未公开的产品架构图、客户合同金额、员工薪酬明细；L4 绝密级包含生产数据库主密钥、客户原始个人身份信息（PII）、核心大模型训练专有语料底座。",
+    "expected_sources": [
+      "IT信息安全与数据合规规范.pdf"
+    ],
+    "expected_doc_snippets": [
+      "L3 机密级",
+      "L4 绝密级",
+      "生产数据库主密钥"
+    ],
+    "must_have_chunk_ids": [
+      "IT信息安全与数据合规规范_9165fa_001",
+      "IT信息安全与数据合规规范_9165fa_003"
+    ]
+  },
+  {
+    "id": "Q09",
+    "category": "direct_fact",
+    "query": "触发安全违规条款 SEC-2025-08-B 会受到什么具体处罚？",
+    "ground_truth_answer": "违反 SEC-2025-08-B（违规将 L3 机密级研发文档或代码片段上传至外部公网 AI 工具或外部代码托管平台但未造成实际扩散），将取消当年评优及晋升资格，扣减当季绩效奖金 3000 元，并强制参加 16 学时安全合规重修。",
+    "expected_sources": [
+      "IT信息安全与数据合规规范.pdf"
+    ],
+    "expected_doc_snippets": [
+      "SEC-2025-08-B",
+      "3000 元",
+      "16 学时"
+    ],
+    "must_have_chunk_ids": [
+      "IT信息安全与数据合规规范_9165fa_003"
+    ]
+  },
+  {
+    "id": "Q10",
+    "category": "direct_fact",
+    "query": "星云智联企业知识引擎 V4.2 私有化部署对 CPU、内存和 GPU 显存的最低要求是什么？",
+    "ground_truth_answer": "CPU 至少 16 核 x86_64；内存最低 64 GB（推荐 128 GB）；GPU 最低 1 张 NVIDIA L20（48GB）或 2 张 RTX 4090（24GB），显存总计不得低于 24 GB。",
+    "expected_sources": [
+      "星云智联企业版产品FAQ.txt"
+    ],
+    "expected_doc_snippets": [
+      "至少 16 核",
+      "最低 64 GB",
+      "不得低于 24 GB"
+    ],
+    "must_have_chunk_ids": [
+      "星云智联企业版产品FAQ_760747_001"
+    ]
+  },
+  {
+    "id": "Q11",
+    "category": "direct_fact",
+    "query": "调用问答 API 返回错误码 ERR-4029 代表什么意思？默认单租户并发 QPS 和 TPM 上限是多少？",
+    "ground_truth_answer": "ERR-4029 表示租户级向量与大模型并发令牌桶限流触发（Tenant Rate Limit Exceeded）。默认单租户 API 并发上限为 30 QPS，每分钟最大 Token 吞吐量（TPM）上限为 120,000 Tokens。",
+    "expected_sources": [
+      "星云智联企业版产品FAQ.txt"
+    ],
+    "expected_doc_snippets": [
+      "ERR-4029",
+      "30 QPS",
+      "120,000 Tokens"
+    ],
+    "must_have_chunk_ids": [
+      "星云智联企业版产品FAQ_760747_002"
+    ]
+  },
+  {
+    "id": "Q12",
+    "category": "direct_fact",
+    "query": "增量建索引报错 ERR-5003 是什么原因导致的？该如何恢复？",
+    "ground_truth_answer": "ERR-5003 表示向量数据库写锁超时（Chroma Lock Timeout，默认 45 秒），通常因上次全量重建进程被强制杀死导致锁未释放或多进程并发写入。可通过重启 nebula-indexer 容器、清理残留 .lock 文件后重新调用 incremental 增量索引恢复。",
+    "expected_sources": [
+      "星云智联企业版产品FAQ.txt"
+    ],
+    "expected_doc_snippets": [
+      "ERR-5003",
+      "45 秒",
+      "nebula-indexer"
+    ],
+    "must_have_chunk_ids": [
+      "星云智联企业版产品FAQ_760747_004"
+    ]
+  },
+  {
+    "id": "Q13",
+    "category": "multi_hop",
+    "query": "某员工月基本工资为 21750 元，本月已使用完3次轻微迟到豁免权后，又发生1次迟到10分钟、1次迟到30分钟，并请了4天事假。请问他本月合计被扣减多少元（含考勤扣款与事假扣薪），且这4天事假需要由谁终审批准？",
+    "ground_truth_answer": "1) 考勤扣款：超出豁免后迟到10分钟（15分钟内）扣 50 元，迟到30分钟（16-60分钟）扣 120 元，小计 170 元；2) 事假扣薪：21750 ÷ 21.75 × 4 = 4000 元；合计扣减 4170 元。3) 审批权限：请假4天（>2天且≤5天）经直属主管初审后，由二级部门总监（Director）终审批准。",
+    "expected_sources": [
+      "员工手册与考勤休假制度.md"
+    ],
+    "expected_doc_snippets": [
+      "每次扣减考勤绩效 50 元",
+      "120 元",
+      "21.75",
+      "二级部门总监（Director）终审批准"
+    ],
+    "must_have_chunk_ids": [
+      "员工手册与考勤休假制度_16076c_001",
+      "员工手册与考勤休假制度_16076c_003",
+      "员工手册与考勤休假制度_16076c_004",
+      "差旅与费用报销管理规范_e5d6c6_002"
+    ]
+  },
+  {
+    "id": "Q14",
+    "category": "multi_hop",
+    "query": "两名 P5 级普通工程师结伴去杭州出差 3 天（住 2 晚），选择同住一间标准间，且按包干领取餐饮和市内交通补贴。请问他们两人这两晚住宿费合计最高可报销多少元？两人 3 天的餐饮加市内交通补贴总计多少元？",
+    "ground_truth_answer": "杭州属于一类城市，普通员工单人住宿上限为 550 元/晚。两人拼房上限上浮至 1.6 倍即 880 元/晚，住 2 晚最高可报销 1760 元。一类城市餐饮补贴 120 元/天/人，市内交通包干 80 元/天/人，每人每天补贴 200 元，两人 3 天补贴总计 200 × 2 × 3 = 1200 元。",
+    "expected_sources": [
+      "差旅与费用报销管理规范.docx"
+    ],
+    "expected_doc_snippets": [
+      "杭州",
+      "550元/晚",
+      "1.6 倍",
+      "120 元/天",
+      "80 元/天"
+    ],
+    "must_have_chunk_ids": [
+      "差旅与费用报销管理规范_e5d6c6_000",
+      "差旅与费用报销管理规范_e5d6c6_001",
+      "差旅与费用报销管理规范_e5d6c6_002"
+    ]
+  },
+  {
+    "id": "Q15",
+    "category": "multi_hop",
+    "query": "一位 P7 高级专家去武汉出差住 1 晚，实际住宿花费 690 元，但只开了增值税普通发票（未开专票）。请问他这笔住宿费是否需要超标特批？由谁审批？若按票面折算规则最终能报销多少元？",
+    "ground_truth_answer": "武汉属于二类城市，P7 高级专家住宿上限为 600 元/晚。实际花费 690 元超标 15%（在 20% 以内），须由二级部门总监（Director）特批。因未开具增值税专用发票，仅按票面金额的 90% 予以报销，即 690 × 90% = 621 元（或按规则折算）。",
+    "expected_sources": [
+      "差旅与费用报销管理规范.docx"
+    ],
+    "expected_doc_snippets": [
+      "武汉",
+      "600元/晚",
+      "20% 以内须由二级部门总监",
+      "90% 予以报销"
+    ],
+    "must_have_chunk_ids": [
+      "差旅与费用报销管理规范_e5d6c6_000",
+      "差旅与费用报销管理规范_e5d6c6_001",
+      "差旅与费用报销管理规范_e5d6c6_003"
+    ]
+  },
+  {
+    "id": "Q16",
+    "category": "multi_hop",
+    "query": "一名司龄满 6 年的员工因病持三甲医院证明请病假 6 天（当月累计6天），这 6 天病假需走哪级审批流程？前 2 天和后 4 天的病假工资分别按日基本工资的百分之多少发放？",
+    "ground_truth_answer": "请假 6 天（>5天）须经直属主管、二级部门总监审批后，报人力资源部 BP 备案并由分管副总裁（VP）终审批准。当月前 2 天病假按本人日基本工资的 80% 发放；超过 2 天的后 4 天因该员工司龄满 6 年（满 5 年及以上），按本人日基本工资的 75% 发放。",
+    "expected_sources": [
+      "员工手册与考勤休假制度.md"
+    ],
+    "expected_doc_snippets": [
+      "80% 发放病假工资",
+      "司龄满 5 年及以上者按本人日基本工资的 75% 发放",
+      "分管副总裁（VP）终审批准"
+    ],
+    "must_have_chunk_ids": [
+      "员工手册与考勤休假制度_16076c_003",
+      "员工手册与考勤休假制度_16076c_004"
+    ]
+  },
+  {
+    "id": "Q17",
+    "category": "multi_hop",
+    "query": "某研发人员为了排查线上问题，离开工位 10 分钟未锁屏，且把一段核心算法源码发到了外部公网 AI 对话工具中（未造成外部扩散）。他分别违反了哪些安全规定？对应的数据密级是什么？合计会被扣减多少元绩效奖金？",
+    "ground_truth_answer": "1) 离开工位超过 5 分钟未锁屏违反第二条终端安全策略（触发 SEC-2025-08-A 轻度违规，扣减绩效奖金 500 元）；2) 核心算法源码属于 L3 机密级数据，上传至外部公网 AI 工具违反第四条外发红线（触发 SEC-2025-08-B 中度违规，扣减绩效奖金 3000 元，取消当年评优晋升并重修16学时）。两项合计扣减绩效奖金 3500 元。",
+    "expected_sources": [
+      "IT信息安全与数据合规规范.pdf"
+    ],
+    "expected_doc_snippets": [
+      "超过 5 分钟必须锁定屏幕",
+      "核心算法源码",
+      "SEC-2025-08-A",
+      "SEC-2025-08-B"
+    ],
+    "must_have_chunk_ids": [
+      "IT信息安全与数据合规规范_9165fa_000",
+      "IT信息安全与数据合规规范_9165fa_001",
+      "IT信息安全与数据合规规范_9165fa_002",
+      "IT信息安全与数据合规规范_9165fa_003"
+    ]
+  },
+  {
+    "id": "Q18",
+    "category": "multi_hop",
+    "query": "如果生产数据库主密钥发生泄露，这属于什么密级的数据、哪一等级的安全事件？当事人和安全响应中心（SRC）分别需要在多长时间内完成上报、启动应急隔离和提交初步溯源报告？",
+    "ground_truth_answer": "生产数据库主密钥属于 L4 绝密级数据，其泄露属于 P0 级特大安全事件。当事人须在 15 分钟内通过企业微信“安全应急哨兵”及内线 88110 上报 SRC；SRC 须在 10 分钟内启动应急隔离，并在 2 小时内提交初步溯源报告。",
+    "expected_sources": [
+      "IT信息安全与数据合规规范.pdf"
+    ],
+    "expected_doc_snippets": [
+      "生产数据库主密钥",
+      "15 分钟内",
+      "P0 级特大安全事件",
+      "10 分钟内启动应急隔离",
+      "2 小时内"
+    ],
+    "must_have_chunk_ids": [
+      "IT信息安全与数据合规规范_9165fa_001",
+      "IT信息安全与数据合规规范_9165fa_002"
+    ]
+  },
+  {
+    "id": "Q19",
+    "category": "multi_hop",
+    "query": "运维团队需要将单租户 API 并发上限从默认的 30 QPS 提升到 80 QPS，并同时开启本地重排与本地向量模型常驻。根据产品 FAQ，需要修改哪个配置文件的哪个参数？后端至少需要几个 GPU 节点以及推荐多少内存？",
+    "ground_truth_answer": "需要修改 `nebula-gateway.yaml` 配置文件中的 `tenant_max_qps` 参数将其调高至 80 QPS；此时需确保后端 GPU 节点数 ≥ 2；若开启本地重排与本地向量模型常驻，单节点内存推荐配置为 128 GB。",
+    "expected_sources": [
+      "星云智联企业版产品FAQ.txt"
+    ],
+    "expected_doc_snippets": [
+      "nebula-gateway.yaml",
+      "tenant_max_qps",
+      "GPU 节点数 ≥ 2",
+      "推荐 128 GB"
+    ],
+    "must_have_chunk_ids": [
+      "星云智联企业版产品FAQ_760747_001",
+      "星云智联企业版产品FAQ_760747_003",
+      "星云智联企业版产品FAQ_760747_004"
+    ]
+  },
+  {
+    "id": "Q20",
+    "category": "multi_hop",
+    "query": "一位用户想要上传一份 25 MB 的扫描版 PDF 合同（内含客户合同金额）到知识库并开启 OCR 解析。请结合产品 FAQ 和安全规范判断：文件大小是否符合上传限制？该合同属于什么数据密级？若开启 OCR 单页解析耗时约多久？",
+    "ground_truth_answer": "1) 单文件上传体积上限为 20 MB，因此 25 MB 的 PDF 超出大小限制无法直接上传；2) 客户合同金额属于 L3 机密级数据，严禁上传至外部公有云 AI，仅可在内部私有化系统处理；3) 扫描件 PDF 开启 `enable_ocr=true` 后单页解析耗时约为 800ms。",
+    "expected_sources": [
+      "星云智联企业版产品FAQ.txt",
+      "IT信息安全与数据合规规范.pdf"
+    ],
+    "expected_doc_snippets": [
+      "上限为 20 MB",
+      "enable_ocr=true",
+      "800ms",
+      "客户合同金额"
+    ],
+    "must_have_chunk_ids": [
+      "IT信息安全与数据合规规范_9165fa_001",
+      "星云智联企业版产品FAQ_760747_005",
+      "星云智联企业版产品FAQ_760747_006"
+    ]
+  },
+  {
+    "id": "Q21",
+    "category": "multi_hop",
+    "query": "一名刚入职满 2 年的男员工（P6职级）因配偶生育申请休满全部陪产假，并在休假结束后去成都出差 2 天（住1晚）。请问他可休几天陪产假？这笔陪产假需要经过哪几级审批？他在成都出差期间住宿最高报销多少元、高铁可坐什么席别？",
+    "ground_truth_answer": "1) 男员工享有 15 天全薪陪产假；2) 因请假时长 15 天（>5天），须经直属主管、二级部门总监审批后，报人力资源部 BP 备案并由分管副总裁（VP）终审批准；3) 成都属于一类城市，P6 普通员工高铁标准为二等座，一类城市住宿报销上限为 550 元/晚。",
+    "expected_sources": [
+      "员工手册与考勤休假制度.md",
+      "差旅与费用报销管理规范.docx"
+    ],
+    "expected_doc_snippets": [
+      "15 天全薪陪产假",
+      "分管副总裁（VP）终审批准",
+      "成都",
+      "二等座",
+      "550元/晚"
+    ],
+    "must_have_chunk_ids": [
+      "员工手册与考勤休假制度_16076c_004",
+      "差旅与费用报销管理规范_e5d6c6_000",
+      "差旅与费用报销管理规范_e5d6c6_001"
+    ]
+  },
+  {
+    "id": "Q22",
+    "category": "multi_hop",
+    "query": "星云智联企业版每日自动全量备份的时间点、增量归档间隔以及 RPO/RTO 指标分别是什么？如果备份恢复后增量建索引遇到写锁超时，系统默认的等待锁超时时间是多少秒？",
+    "ground_truth_answer": "系统每日凌晨 02:00 自动执行全量快照备份，每 15 分钟执行一次增量日志归档；RPO ≤ 15 分钟，RTO ≤ 30 分钟。增量建索引遇到写锁超时（ERR-5003）时，系统默认的等待锁超时时间为 45 秒。",
+    "expected_sources": [
+      "星云智联企业版产品FAQ.txt"
+    ],
+    "expected_doc_snippets": [
+      "凌晨 02:00",
+      "RPO（恢复点目标）≤ 15 分钟",
+      "RTO（恢复时间目标）≤ 30 分钟",
+      "45 秒"
+    ],
+    "must_have_chunk_ids": [
+      "星云智联企业版产品FAQ_760747_004",
+      "星云智联企业版产品FAQ_760747_006"
+    ]
+  },
+  {
+    "id": "Q23",
+    "category": "unanswerable",
+    "query": "公司员工股票期权（ESOP）的归属期是几年？离职后行权回购价格如何计算？",
+    "ground_truth_answer": "知识库材料中没有提到员工股票期权（ESOP）归属期及离职行权回购价格的相关信息，应予以拒答。",
+    "expected_sources": [],
+    "expected_doc_snippets": [],
+    "must_have_chunk_ids": []
+  },
+  {
+    "id": "Q24",
+    "category": "unanswerable",
+    "query": "员工派驻欧洲（如瑞士、德国）海外出差时的每日外币伙食津贴和签证代办费报销标准是多少？",
+    "ground_truth_answer": "知识库材料中仅规定了国内一、二、三类城市的差旅标准，未提到海外（欧洲/瑞士/德国）出差津贴与签证费标准，应予以拒答。",
+    "expected_sources": [],
+    "expected_doc_snippets": [],
+    "must_have_chunk_ids": []
+  },
+  {
+    "id": "Q25",
+    "category": "unanswerable",
+    "query": "公司总部员工食堂的早晚餐刷卡补贴金额以及健身房开放时间是什么？",
+    "ground_truth_answer": "知识库材料中没有提到员工食堂补贴及健身房开放时间的相关内容，应予以拒答。",
+    "expected_sources": [],
+    "expected_doc_snippets": [],
+    "must_have_chunk_ids": []
+  },
+  {
+    "id": "Q26",
+    "category": "unanswerable",
+    "query": "星云智联企业版出现错误码 ERR-9099（许可证签名校验失效）时应该如何重新激活授权？",
+    "ground_truth_answer": "知识库材料中仅提及 ERR-4029 和 ERR-5003，没有提到错误码 ERR-9099 及许可证重新激活方法，应予以拒答。",
+    "expected_sources": [],
+    "expected_doc_snippets": [],
+    "must_have_chunk_ids": []
+  },
+  {
+    "id": "Q27",
+    "category": "unanswerable",
+    "query": "公司应届生校招落户北京的户口指标评分细则和住房租房补贴每月多少钱？",
+    "ground_truth_answer": "知识库材料中没有提到应届生北京落户指标评分及租房补贴标准，应予以拒答。",
+    "expected_sources": [],
+    "expected_doc_snippets": [],
+    "must_have_chunk_ids": []
+  },
+  {
+    "id": "Q28",
+    "category": "unanswerable",
+    "query": "星云智联 V4.2 企业版单套私有化商业软件授权的年度订阅报价和维保服务费率是多少？",
+    "ground_truth_answer": "知识库材料中没有提到产品商业报价及年度维保服务费率，应予以拒答。",
+    "expected_sources": [],
+    "expected_doc_snippets": [],
+    "must_have_chunk_ids": []
+  },
+  {
+    "id": "Q29",
+    "category": "unanswerable",
+    "query": "员工申请内部转岗（活水计划）需要满足多长在岗时间，以及转岗面试有几轮？",
+    "ground_truth_answer": "知识库材料中没有提到内部转岗（活水计划）条件及面试轮次，应予以拒答。",
+    "expected_sources": [],
+    "expected_doc_snippets": [],
+    "must_have_chunk_ids": []
+  },
+  {
+    "id": "Q30",
+    "category": "unanswerable",
+    "query": "研发人员周末加班调休券的有效期是多久？法定节假日三倍工资基数上限是多少？",
+    "ground_truth_answer": "知识库材料中没有提到周末加班调休券有效期及法定节假日加班费基数上限，应予以拒答。",
+    "expected_sources": [],
+    "expected_doc_snippets": [],
+    "must_have_chunk_ids": []
+  }
+]

@@ -1,0 +1,4350 @@
+{
+  "embedding_model": "Qwen3-Embedding-0.6B",
+  "main_index_log": {
+    "timestamp": "2026-11-04T22:37:24",
+    "requested_mode": "rebuild",
+    "effective_mode": "rebuild",
+    "collection_name": "enterprise_kb",
+    "embedding_model": "Qwen3-Embedding-0.6B",
+    "chunk_size": 400,
+    "overlap": 80,
+    "added_or_updated": [
+      "IT信息安全与数据合规规范.pdf",
+      "员工手册与考勤休假制度.md",
+      "差旅与费用报销管理规范.docx",
+      "星云智联企业版产品FAQ.txt"
+    ],
+    "skipped": [],
+    "removed": [],
+    "new_chunks_added": 20,
+    "total_chunks": 20,
+    "latency_ms": 3705
+  },
+  "incremental_index_verification_log": {
+    "timestamp": "2026-11-04T22:37:24",
+    "requested_mode": "incremental",
+    "effective_mode": "incremental",
+    "collection_name": "enterprise_kb",
+    "embedding_model": "Qwen3-Embedding-0.6B",
+    "chunk_size": 400,
+    "overlap": 80,
+    "added_or_updated": [],
+    "skipped": [
+      "IT信息安全与数据合规规范.pdf",
+      "员工手册与考勤休假制度.md",
+      "差旅与费用报销管理规范.docx",
+      "星云智联企业版产品FAQ.txt"
+    ],
+    "removed": [],
+    "new_chunks_added": 0,
+    "total_chunks": 20,
+    "latency_ms": 1
+  },
+  "calibrated_refusal_threshold": 0.44,
+  "chunk_size_overlap_ablation": {
+    "chunk220_no_overlap": {
+      "chunk_size": 220,
+      "overlap": 0,
+      "total_chunks": 38,
+      "overall_answerable_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 0.8545,
+        "Precision@3": 0.5758,
+        "MRR@3": 0.9773,
+        "Hit@5": 1.0,
+        "Recall@5": 0.9159,
+        "Precision@5": 0.4,
+        "MRR@5": 0.9773,
+        "Hit@8": 1.0,
+        "Recall@8": 0.9909,
+        "Precision@8": 0.2898,
+        "MRR@8": 0.9773
+      },
+      "direct_fact_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 1.0,
+        "Precision@3": 0.5278,
+        "MRR@3": 0.9583,
+        "Hit@5": 1.0,
+        "Recall@5": 1.0,
+        "Precision@5": 0.3333,
+        "MRR@5": 0.9583,
+        "Hit@8": 1.0,
+        "Recall@8": 1.0,
+        "Precision@8": 0.2083,
+        "MRR@8": 0.9583
+      },
+      "multi_hop_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 0.68,
+        "Precision@3": 0.6333,
+        "MRR@3": 1.0,
+        "Hit@5": 1.0,
+        "Recall@5": 0.815,
+        "Precision@5": 0.48,
+        "MRR@5": 1.0,
+        "Hit@8": 1.0,
+        "Recall@8": 0.98,
+        "Precision@8": 0.3875,
+        "MRR@8": 1.0
+      }
+    },
+    "chunk220_overlap60": {
+      "chunk_size": 220,
+      "overlap": 60,
+      "total_chunks": 38,
+      "overall_answerable_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 0.8455,
+        "Precision@3": 0.6667,
+        "MRR@3": 0.9545,
+        "Hit@5": 1.0,
+        "Recall@5": 0.925,
+        "Precision@5": 0.4909,
+        "MRR@5": 0.9545,
+        "Hit@8": 1.0,
+        "Recall@8": 0.9909,
+        "Precision@8": 0.3523,
+        "MRR@8": 0.9545
+      },
+      "direct_fact_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 0.9583,
+        "Precision@3": 0.6111,
+        "MRR@3": 0.9583,
+        "Hit@5": 1.0,
+        "Recall@5": 1.0,
+        "Precision@5": 0.3833,
+        "MRR@5": 0.9583,
+        "Hit@8": 1.0,
+        "Recall@8": 1.0,
+        "Precision@8": 0.25,
+        "MRR@8": 0.9583
+      },
+      "multi_hop_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 0.71,
+        "Precision@3": 0.7333,
+        "MRR@3": 0.95,
+        "Hit@5": 1.0,
+        "Recall@5": 0.835,
+        "Precision@5": 0.62,
+        "MRR@5": 0.95,
+        "Hit@8": 1.0,
+        "Recall@8": 0.98,
+        "Precision@8": 0.475,
+        "MRR@8": 0.95
+      }
+    },
+    "chunk400_no_overlap": {
+      "chunk_size": 400,
+      "overlap": 0,
+      "total_chunks": 20,
+      "overall_answerable_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 0.9386,
+        "Precision@3": 0.5303,
+        "MRR@3": 0.9773,
+        "Hit@5": 1.0,
+        "Recall@5": 1.0,
+        "Precision@5": 0.3636,
+        "MRR@5": 0.9773,
+        "Hit@8": 1.0,
+        "Recall@8": 1.0,
+        "Precision@8": 0.233,
+        "MRR@8": 0.9773
+      },
+      "direct_fact_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 1.0,
+        "Precision@3": 0.3889,
+        "MRR@3": 0.9583,
+        "Hit@5": 1.0,
+        "Recall@5": 1.0,
+        "Precision@5": 0.2333,
+        "MRR@5": 0.9583,
+        "Hit@8": 1.0,
+        "Recall@8": 1.0,
+        "Precision@8": 0.1458,
+        "MRR@8": 0.9583
+      },
+      "multi_hop_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 0.865,
+        "Precision@3": 0.7,
+        "MRR@3": 1.0,
+        "Hit@5": 1.0,
+        "Recall@5": 1.0,
+        "Precision@5": 0.52,
+        "MRR@5": 1.0,
+        "Hit@8": 1.0,
+        "Recall@8": 1.0,
+        "Precision@8": 0.3375,
+        "MRR@8": 1.0
+      }
+    },
+    "chunk400_overlap80": {
+      "chunk_size": 400,
+      "overlap": 80,
+      "total_chunks": 20,
+      "overall_answerable_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 0.9682,
+        "Precision@3": 0.5909,
+        "MRR@3": 0.9773,
+        "Hit@5": 1.0,
+        "Recall@5": 1.0,
+        "Precision@5": 0.3909,
+        "MRR@5": 0.9773,
+        "Hit@8": 1.0,
+        "Recall@8": 1.0,
+        "Precision@8": 0.25,
+        "MRR@8": 0.9773
+      },
+      "direct_fact_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 1.0,
+        "Precision@3": 0.4166,
+        "MRR@3": 0.9583,
+        "Hit@5": 1.0,
+        "Recall@5": 1.0,
+        "Precision@5": 0.25,
+        "MRR@5": 0.9583,
+        "Hit@8": 1.0,
+        "Recall@8": 1.0,
+        "Precision@8": 0.1562,
+        "MRR@8": 0.9583
+      },
+      "multi_hop_metrics": {
+        "Hit@3": 1.0,
+        "Recall@3": 0.93,
+        "Precision@3": 0.8,
+        "MRR@3": 1.0,
+        "Hit@5": 1.0,
+        "Recall@5": 1.0,
+        "Precision@5": 0.56,
+        "MRR@5": 1.0,
+        "Hit@8": 1.0,
+        "Recall@8": 1.0,
+        "Precision@8": 0.3625,
+        "MRR@8": 1.0
+      }
+    }
+  },
+  "baseline_vector_retrieval": {
+    "search_type": "vector",
+    "collection_name": "enterprise_kb",
+    "answerable_count": 22,
+    "unanswerable_count": 8,
+    "overall_answerable_metrics": {
+      "Hit@3": 1.0,
+      "Recall@3": 0.9682,
+      "Precision@3": 0.5909,
+      "MRR@3": 0.9773,
+      "Hit@5": 1.0,
+      "Recall@5": 1.0,
+      "Precision@5": 0.3909,
+      "MRR@5": 0.9773,
+      "Hit@8": 1.0,
+      "Recall@8": 1.0,
+      "Precision@8": 0.25,
+      "MRR@8": 0.9773
+    },
+    "direct_fact_metrics": {
+      "Hit@3": 1.0,
+      "Recall@3": 1.0,
+      "Precision@3": 0.4166,
+      "MRR@3": 0.9583,
+      "Hit@5": 1.0,
+      "Recall@5": 1.0,
+      "Precision@5": 0.25,
+      "MRR@5": 0.9583,
+      "Hit@8": 1.0,
+      "Recall@8": 1.0,
+      "Precision@8": 0.1562,
+      "MRR@8": 0.9583
+    },
+    "multi_hop_metrics": {
+      "Hit@3": 1.0,
+      "Recall@3": 0.93,
+      "Precision@3": 0.8,
+      "MRR@3": 1.0,
+      "Hit@5": 1.0,
+      "Recall@5": 1.0,
+      "Precision@5": 0.56,
+      "MRR@5": 1.0,
+      "Hit@8": 1.0,
+      "Recall@8": 1.0,
+      "Precision@8": 0.3625,
+      "MRR@8": 1.0
+    },
+    "dist0_distribution": {
+      "answerable": {
+        "min": 0.1134,
+        "mean": 0.3307,
+        "median": 0.3324,
+        "p90": 0.4357,
+        "max": 0.4742,
+        "values": [
+          0.4574,
+          0.2732,
+          0.2966,
+          0.2453,
+          0.4143,
+          0.3625,
+          0.4742,
+          0.3015,
+          0.4357,
+          0.1134,
+          0.2419,
+          0.2765,
+          0.2615,
+          0.29,
+          0.3591,
+          0.3234,
+          0.2104,
+          0.4284,
+          0.4089,
+          0.3413,
+          0.3787,
+          0.3805
+        ]
+      },
+      "unanswerable": {
+        "min": 0.3967,
+        "mean": 0.5088,
+        "median": 0.4978,
+        "p90": 0.6081,
+        "max": 0.6081,
+        "values": [
+          0.6035,
+          0.42,
+          0.5106,
+          0.4541,
+          0.5926,
+          0.3967,
+          0.6081,
+          0.485
+        ]
+      }
+    },
+    "uncalibrated_055_eval": {
+      "threshold": 0.55,
+      "unanswerable_refusal_accuracy": 0.375,
+      "answerable_pass_rate": 1.0,
+      "false_refusal_rate": 0.0,
+      "balanced_accuracy": 0.6875
+    },
+    "calibrated_threshold_eval": {
+      "threshold": 0.44,
+      "unanswerable_refusal_accuracy": 0.75,
+      "answerable_pass_rate": 0.9091,
+      "false_refusal_rate": 0.0909,
+      "balanced_accuracy": 0.8295
+    },
+    "threshold_scan": [
+      {
+        "threshold": 0.28,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.3182,
+        "false_refusal_rate": 0.6818,
+        "balanced_accuracy": 0.6591
+      },
+      {
+        "threshold": 0.3,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.4091,
+        "false_refusal_rate": 0.5909,
+        "balanced_accuracy": 0.7045
+      },
+      {
+        "threshold": 0.32,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.4545,
+        "false_refusal_rate": 0.5455,
+        "balanced_accuracy": 0.7273
+      },
+      {
+        "threshold": 0.34,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.5,
+        "false_refusal_rate": 0.5,
+        "balanced_accuracy": 0.75
+      },
+      {
+        "threshold": 0.36,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.5909,
+        "false_refusal_rate": 0.4091,
+        "balanced_accuracy": 0.7955
+      },
+      {
+        "threshold": 0.38,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.6818,
+        "false_refusal_rate": 0.3182,
+        "balanced_accuracy": 0.8409
+      },
+      {
+        "threshold": 0.4,
+        "unanswerable_refusal_accuracy": 0.875,
+        "answerable_pass_rate": 0.7273,
+        "false_refusal_rate": 0.2727,
+        "balanced_accuracy": 0.8011
+      },
+      {
+        "threshold": 0.42,
+        "unanswerable_refusal_accuracy": 0.75,
+        "answerable_pass_rate": 0.8182,
+        "false_refusal_rate": 0.1818,
+        "balanced_accuracy": 0.7841
+      },
+      {
+        "threshold": 0.44,
+        "unanswerable_refusal_accuracy": 0.75,
+        "answerable_pass_rate": 0.9091,
+        "false_refusal_rate": 0.0909,
+        "balanced_accuracy": 0.8295
+      },
+      {
+        "threshold": 0.46,
+        "unanswerable_refusal_accuracy": 0.625,
+        "answerable_pass_rate": 0.9545,
+        "false_refusal_rate": 0.0455,
+        "balanced_accuracy": 0.7898
+      },
+      {
+        "threshold": 0.48,
+        "unanswerable_refusal_accuracy": 0.625,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.8125
+      },
+      {
+        "threshold": 0.5,
+        "unanswerable_refusal_accuracy": 0.5,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.75
+      },
+      {
+        "threshold": 0.52,
+        "unanswerable_refusal_accuracy": 0.375,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.6875
+      },
+      {
+        "threshold": 0.54,
+        "unanswerable_refusal_accuracy": 0.375,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.6875
+      },
+      {
+        "threshold": 0.56,
+        "unanswerable_refusal_accuracy": 0.375,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.6875
+      },
+      {
+        "threshold": 0.58,
+        "unanswerable_refusal_accuracy": 0.375,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.6875
+      },
+      {
+        "threshold": 0.6,
+        "unanswerable_refusal_accuracy": 0.25,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.625
+      },
+      {
+        "threshold": 0.62,
+        "unanswerable_refusal_accuracy": 0.0,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.5
+      }
+    ],
+    "per_query_logs": [
+      {
+        "id": "Q01",
+        "category": "direct_fact",
+        "query": "公司核心工作时段是几点到几点？每天午休时间是多长？",
+        "dist0": 0.4574,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 46.38,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.4574,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.4661,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.5432,
+            "rrf_score": null,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.5731,
+            "rrf_score": null,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.5752,
+            "rrf_score": null,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          }
+        ]
+      },
+      {
+        "id": "Q02",
+        "category": "direct_fact",
+        "query": "员工每个自然月有几次轻微迟到豁免权？允许在什么时间段打卡不扣款？",
+        "dist0": 0.2732,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 46.59,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.2732,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.4484,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.4566,
+            "rrf_score": null,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.5171,
+            "rrf_score": null,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.5612,
+            "rrf_score": null,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          }
+        ]
+      },
+      {
+        "id": "Q03",
+        "category": "direct_fact",
+        "query": "司龄满3年但未满5年的正式员工，每年享有几天带薪年假？未休完的年假最晚可顺延到什么时候？",
+        "dist0": 0.2966,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 47.99,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.2966,
+            "rrf_score": null,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.3485,
+            "rrf_score": null,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.3763,
+            "rrf_score": null,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.4712,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.5587,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          }
+        ]
+      },
+      {
+        "id": "Q04",
+        "category": "direct_fact",
+        "query": "公司规定的一类差旅城市有哪些？普通员工（P4-P6）在一类城市的住宿报销上限是多少？",
+        "dist0": 0.2453,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 46.0,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.2453,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.2547,
+            "rrf_score": null,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.3076,
+            "rrf_score": null,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.4842,
+            "rrf_score": null,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.5455,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          }
+        ]
+      },
+      {
+        "id": "Q05",
+        "category": "direct_fact",
+        "query": "员工报销时开具发票的抬头和纳税人识别号（税号）分别是什么？未开具增值税专用发票的住宿费怎么报销？",
+        "dist0": 0.4143,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 50.05,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.4143,
+            "rrf_score": null,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.4712,
+            "rrf_score": null,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.5046,
+            "rrf_score": null,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.5462,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.5985,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          }
+        ]
+      },
+      {
+        "id": "Q06",
+        "category": "direct_fact",
+        "query": "出差返程后需要在多少个工作日内提交报销单？超过30个自然日未提交会有什么后果？",
+        "dist0": 0.3625,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 46.38,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.3625,
+            "rrf_score": null,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.4593,
+            "rrf_score": null,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.4889,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.5391,
+            "rrf_score": null,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.5746,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          }
+        ]
+      },
+      {
+        "id": "Q07",
+        "category": "direct_fact",
+        "query": "公司内部系统账号密码的最小长度、字符种类要求以及强制更换周期分别是多少？",
+        "dist0": 0.4742,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 47.8,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4742,
+            "rrf_score": null,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5736,
+            "rrf_score": null,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5952,
+            "rrf_score": null,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.6362,
+            "rrf_score": null,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.6553,
+            "rrf_score": null,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          }
+        ]
+      },
+      {
+        "id": "Q08",
+        "category": "direct_fact",
+        "query": "在公司数据分级分类规范中，L3机密级和L4绝密级分别包含哪些典型数据？",
+        "dist0": 0.3015,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 45.48,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.3015,
+            "rrf_score": null,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4533,
+            "rrf_score": null,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4708,
+            "rrf_score": null,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.5729,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.59,
+            "rrf_score": null,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          }
+        ]
+      },
+      {
+        "id": "Q09",
+        "category": "direct_fact",
+        "query": "触发安全违规条款 SEC-2025-08-B 会受到什么具体处罚？",
+        "dist0": 0.4357,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 47.95,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 0.5,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 0.5,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 0.5
+        },
+        "top_docs": [
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4357,
+            "rrf_score": null,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4523,
+            "rrf_score": null,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5735,
+            "rrf_score": null,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.6605,
+            "rrf_score": null,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.6991,
+            "rrf_score": null,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          }
+        ]
+      },
+      {
+        "id": "Q10",
+        "category": "direct_fact",
+        "query": "星云智联企业知识引擎 V4.2 私有化部署对 CPU、内存和 GPU 显存的最低要求是什么？",
+        "dist0": 0.1134,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 48.95,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_001",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什么？",
+            "distance": 0.1134,
+            "rrf_score": null,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04 Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_000",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】",
+            "distance": 0.366,
+            "rrf_score": null,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.444,
+            "rrf_score": null,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5048,
+            "rrf_score": null,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.5222,
+            "rrf_score": null,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          }
+        ]
+      },
+      {
+        "id": "Q11",
+        "category": "direct_fact",
+        "query": "调用问答 API 返回错误码 ERR-4029 代表什么意思？默认单租户并发 QPS 和 TPM 上限是多少？",
+        "dist0": 0.2419,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 49.11,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.2419,
+            "rrf_score": null,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_003",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.4703,
+            "rrf_score": null,
+            "snippet_preview": "SDK 中开启指数退避重试（建议初始退避 500ms，最大重试 3 次）； 2. 登录星云管理后台“系统设置 -> 流量配额”，检查是否存在异常脚本高频刷接口； 3. 如属正常业务高峰，可联系管理员在"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_004",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q3: 增量建索引任务卡死并报错 ERR-5003（Chroma Lock Timeout）该如何处理？",
+            "distance": 0.4969,
+            "rrf_score": null,
+            "snippet_preview": "可联系管理员在 `nebula-gateway.yaml` 中将 `tenant_max_qps` 调高至 80 QPS（需确保后端 GPU 节点数 ≥ 2）。 Q3: 增量建索引任务卡死并报错 ER"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_000",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】",
+            "distance": 0.5136,
+            "rrf_score": null,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.5804,
+            "rrf_score": null,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          }
+        ]
+      },
+      {
+        "id": "Q12",
+        "category": "direct_fact",
+        "query": "增量建索引报错 ERR-5003 是什么原因导致的？该如何恢复？",
+        "dist0": 0.2765,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 47.77,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_004",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q3: 增量建索引任务卡死并报错 ERR-5003（Chroma Lock Timeout）该如何处理？",
+            "distance": 0.2765,
+            "rrf_score": null,
+            "snippet_preview": "可联系管理员在 `nebula-gateway.yaml` 中将 `tenant_max_qps` 调高至 80 QPS（需确保后端 GPU 节点数 ≥ 2）。 Q3: 增量建索引任务卡死并报错 ER"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.534,
+            "rrf_score": null,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.534,
+            "rrf_score": null,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_003",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.5873,
+            "rrf_score": null,
+            "snippet_preview": "SDK 中开启指数退避重试（建议初始退避 500ms，最大重试 3 次）； 2. 登录星云管理后台“系统设置 -> 流量配额”，检查是否存在异常脚本高频刷接口； 3. 如属正常业务高峰，可联系管理员在"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.6221,
+            "rrf_score": null,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          }
+        ]
+      },
+      {
+        "id": "Q13",
+        "category": "multi_hop",
+        "query": "某员工月基本工资为 21750 元，本月已使用完3次轻微迟到豁免权后，又发生1次迟到10分钟、1次迟到30分钟，并请了4天事假。请问他本月合计被扣减多少元（含考勤扣款与事假扣薪），且这4天事假需要由谁终审批准？",
+        "dist0": 0.2615,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 81.31,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 1.0,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.5,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.2615,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.3976,
+            "rrf_score": null,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.441,
+            "rrf_score": null,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.4508,
+            "rrf_score": null,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.5111,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          }
+        ]
+      },
+      {
+        "id": "Q14",
+        "category": "multi_hop",
+        "query": "两名 P5 级普通工程师结伴去杭州出差 3 天（住 2 晚），选择同住一间标准间，且按包干领取餐饮和市内交通补贴。请问他们两人这两晚住宿费合计最高可报销多少元？两人 3 天的餐饮加市内交通补贴总计多少元？",
+        "dist0": 0.29,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 72.43,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 1.0,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.375,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.29,
+            "rrf_score": null,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.3223,
+            "rrf_score": null,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.4568,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.4988,
+            "rrf_score": null,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.5518,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          }
+        ]
+      },
+      {
+        "id": "Q15",
+        "category": "multi_hop",
+        "query": "一位 P7 高级专家去武汉出差住 1 晚，实际住宿花费 690 元，但只开了增值税普通发票（未开专票）。请问他这笔住宿费是否需要超标特批？由谁审批？若按票面折算规则最终能报销多少元？",
+        "dist0": 0.3591,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 71.78,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 0.75,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.375,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.3591,
+            "rrf_score": null,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.3968,
+            "rrf_score": null,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.4411,
+            "rrf_score": null,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.5185,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.6098,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          }
+        ]
+      },
+      {
+        "id": "Q16",
+        "category": "multi_hop",
+        "query": "一名司龄满 6 年的员工因病持三甲医院证明请病假 6 天（当月累计6天），这 6 天病假需走哪级审批流程？前 2 天和后 4 天的病假工资分别按日基本工资的百分之多少发放？",
+        "dist0": 0.3234,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 71.46,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.3234,
+            "rrf_score": null,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.335,
+            "rrf_score": null,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.432,
+            "rrf_score": null,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.4866,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.6037,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          }
+        ]
+      },
+      {
+        "id": "Q17",
+        "category": "multi_hop",
+        "query": "某研发人员为了排查线上问题，离开工位 10 分钟未锁屏，且把一段核心算法源码发到了外部公网 AI 对话工具中（未造成外部扩散）。他分别违反了哪些安全规定？对应的数据密级是什么？合计会被扣减多少元绩效奖金？",
+        "dist0": 0.2104,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 71.19,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 0.75,
+          "Precision@3": 1.0,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.8,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.5,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.2104,
+            "rrf_score": null,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.3125,
+            "rrf_score": null,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.3415,
+            "rrf_score": null,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4673,
+            "rrf_score": null,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.5225,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          }
+        ]
+      },
+      {
+        "id": "Q18",
+        "category": "multi_hop",
+        "query": "如果生产数据库主密钥发生泄露，这属于什么密级的数据、哪一等级的安全事件？当事人和安全响应中心（SRC）分别需要在多长时间内完成上报、启动应急隔离和提交初步溯源报告？",
+        "dist0": 0.4284,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 65.95,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4284,
+            "rrf_score": null,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5047,
+            "rrf_score": null,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5315,
+            "rrf_score": null,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5446,
+            "rrf_score": null,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.6902,
+            "rrf_score": null,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          }
+        ]
+      },
+      {
+        "id": "Q19",
+        "category": "multi_hop",
+        "query": "运维团队需要将单租户 API 并发上限从默认的 30 QPS 提升到 80 QPS，并同时开启本地重排与本地向量模型常驻。根据产品 FAQ，需要修改哪个配置文件的哪个参数？后端至少需要几个 GPU 节点以及推荐多少内存？",
+        "dist0": 0.4089,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 70.26,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.375,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_003",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.4089,
+            "rrf_score": null,
+            "snippet_preview": "SDK 中开启指数退避重试（建议初始退避 500ms，最大重试 3 次）； 2. 登录星云管理后台“系统设置 -> 流量配额”，检查是否存在异常脚本高频刷接口； 3. 如属正常业务高峰，可联系管理员在"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.4238,
+            "rrf_score": null,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_001",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什么？",
+            "distance": 0.4592,
+            "rrf_score": null,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04 Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_004",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q3: 增量建索引任务卡死并报错 ERR-5003（Chroma Lock Timeout）该如何处理？",
+            "distance": 0.488,
+            "rrf_score": null,
+            "snippet_preview": "可联系管理员在 `nebula-gateway.yaml` 中将 `tenant_max_qps` 调高至 80 QPS（需确保后端 GPU 节点数 ≥ 2）。 Q3: 增量建索引任务卡死并报错 ER"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.5479,
+            "rrf_score": null,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          }
+        ]
+      },
+      {
+        "id": "Q20",
+        "category": "multi_hop",
+        "query": "一位用户想要上传一份 25 MB 的扫描版 PDF 合同（内含客户合同金额）到知识库并开启 OCR 解析。请结合产品 FAQ 和安全规范判断：文件大小是否符合上传限制？该合同属于什么数据密级？若开启 OCR 单页解析耗时约多久？",
+        "dist0": 0.3413,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 69.28,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 1.0,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.375,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.3413,
+            "rrf_score": null,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.4009,
+            "rrf_score": null,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5312,
+            "rrf_score": null,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5416,
+            "rrf_score": null,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5442,
+            "rrf_score": null,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          }
+        ]
+      },
+      {
+        "id": "Q21",
+        "category": "multi_hop",
+        "query": "一名刚入职满 2 年的男员工（P6职级）因配偶生育申请休满全部陪产假，并在休假结束后去成都出差 2 天（住1晚）。请问他可休几天陪产假？这笔陪产假需要经过哪几级审批？他在成都出差期间住宿最高报销多少元、高铁可坐什么席别？",
+        "dist0": 0.3787,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 77.64,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 0.8,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.375,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.3787,
+            "rrf_score": null,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.4409,
+            "rrf_score": null,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.4875,
+            "rrf_score": null,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.4915,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.5115,
+            "rrf_score": null,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          }
+        ]
+      },
+      {
+        "id": "Q22",
+        "category": "multi_hop",
+        "query": "星云智联企业版每日自动全量备份的时间点、增量归档间隔以及 RPO/RTO 指标分别是什么？如果备份恢复后增量建索引遇到写锁超时，系统默认的等待锁超时时间是多少秒？",
+        "dist0": 0.3805,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 67.06,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.3805,
+            "rrf_score": null,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.4127,
+            "rrf_score": null,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_004",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q3: 增量建索引任务卡死并报错 ERR-5003（Chroma Lock Timeout）该如何处理？",
+            "distance": 0.4734,
+            "rrf_score": null,
+            "snippet_preview": "可联系管理员在 `nebula-gateway.yaml` 中将 `tenant_max_qps` 调高至 80 QPS（需确保后端 GPU 节点数 ≥ 2）。 Q3: 增量建索引任务卡死并报错 ER"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_000",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】",
+            "distance": 0.514,
+            "rrf_score": null,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_001",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什么？",
+            "distance": 0.5149,
+            "rrf_score": null,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04 Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什"
+          }
+        ]
+      },
+      {
+        "id": "Q23",
+        "category": "unanswerable",
+        "query": "公司员工股票期权（ESOP）的归属期是几年？离职后行权回购价格如何计算？",
+        "dist0": 0.6035,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 47.48,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.6035,
+            "rrf_score": null,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.607,
+            "rrf_score": null,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.6158,
+            "rrf_score": null,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.6584,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.6877,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          }
+        ]
+      },
+      {
+        "id": "Q24",
+        "category": "unanswerable",
+        "query": "员工派驻欧洲（如瑞士、德国）海外出差时的每日外币伙食津贴和签证代办费报销标准是多少？",
+        "dist0": 0.42,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 46.8,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.42,
+            "rrf_score": null,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.5097,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.5131,
+            "rrf_score": null,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.5781,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.5838,
+            "rrf_score": null,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          }
+        ]
+      },
+      {
+        "id": "Q25",
+        "category": "unanswerable",
+        "query": "公司总部员工食堂的早晚餐刷卡补贴金额以及健身房开放时间是什么？",
+        "dist0": 0.5106,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 47.1,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.5106,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.512,
+            "rrf_score": null,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.6017,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.6207,
+            "rrf_score": null,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.6419,
+            "rrf_score": null,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          }
+        ]
+      },
+      {
+        "id": "Q26",
+        "category": "unanswerable",
+        "query": "星云智联企业版出现错误码 ERR-9099（许可证签名校验失效）时应该如何重新激活授权？",
+        "dist0": 0.4541,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 50.36,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.4541,
+            "rrf_score": null,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_000",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】",
+            "distance": 0.5069,
+            "rrf_score": null,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5503,
+            "rrf_score": null,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_003",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.5545,
+            "rrf_score": null,
+            "snippet_preview": "SDK 中开启指数退避重试（建议初始退避 500ms，最大重试 3 次）； 2. 登录星云管理后台“系统设置 -> 流量配额”，检查是否存在异常脚本高频刷接口； 3. 如属正常业务高峰，可联系管理员在"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5758,
+            "rrf_score": null,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          }
+        ]
+      },
+      {
+        "id": "Q27",
+        "category": "unanswerable",
+        "query": "公司应届生校招落户北京的户口指标评分细则和住房租房补贴每月多少钱？",
+        "dist0": 0.5926,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 46.93,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.5926,
+            "rrf_score": null,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.5999,
+            "rrf_score": null,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.6419,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.6621,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.7177,
+            "rrf_score": null,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          }
+        ]
+      },
+      {
+        "id": "Q28",
+        "category": "unanswerable",
+        "query": "星云智联 V4.2 企业版单套私有化商业软件授权的年度订阅报价和维保服务费率是多少？",
+        "dist0": 0.3967,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 48.91,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_001",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什么？",
+            "distance": 0.3967,
+            "rrf_score": null,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04 Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_000",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】",
+            "distance": 0.4222,
+            "rrf_score": null,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.5199,
+            "rrf_score": null,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.539,
+            "rrf_score": null,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5477,
+            "rrf_score": null,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          }
+        ]
+      },
+      {
+        "id": "Q29",
+        "category": "unanswerable",
+        "query": "员工申请内部转岗（活水计划）需要满足多长在岗时间，以及转岗面试有几轮？",
+        "dist0": 0.6081,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 40.85,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.6081,
+            "rrf_score": null,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.6147,
+            "rrf_score": null,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.6605,
+            "rrf_score": null,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.6722,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.6825,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          }
+        ]
+      },
+      {
+        "id": "Q30",
+        "category": "unanswerable",
+        "query": "研发人员周末加班调休券的有效期是多久？法定节假日三倍工资基数上限是多少？",
+        "dist0": 0.485,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 42.69,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.485,
+            "rrf_score": null,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.5057,
+            "rrf_score": null,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.5083,
+            "rrf_score": null,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.5281,
+            "rrf_score": null,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.5995,
+            "rrf_score": null,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          }
+        ]
+      }
+    ]
+  },
+  "hybrid_rrf_retrieval": {
+    "search_type": "hybrid",
+    "collection_name": "enterprise_kb",
+    "answerable_count": 22,
+    "unanswerable_count": 8,
+    "overall_answerable_metrics": {
+      "Hit@3": 1.0,
+      "Recall@3": 0.9682,
+      "Precision@3": 0.5909,
+      "MRR@3": 0.9545,
+      "Hit@5": 1.0,
+      "Recall@5": 1.0,
+      "Precision@5": 0.3909,
+      "MRR@5": 0.9545,
+      "Hit@8": 1.0,
+      "Recall@8": 1.0,
+      "Precision@8": 0.25,
+      "MRR@8": 0.9545
+    },
+    "direct_fact_metrics": {
+      "Hit@3": 1.0,
+      "Recall@3": 1.0,
+      "Precision@3": 0.4166,
+      "MRR@3": 0.9583,
+      "Hit@5": 1.0,
+      "Recall@5": 1.0,
+      "Precision@5": 0.25,
+      "MRR@5": 0.9583,
+      "Hit@8": 1.0,
+      "Recall@8": 1.0,
+      "Precision@8": 0.1562,
+      "MRR@8": 0.9583
+    },
+    "multi_hop_metrics": {
+      "Hit@3": 1.0,
+      "Recall@3": 0.93,
+      "Precision@3": 0.8,
+      "MRR@3": 0.95,
+      "Hit@5": 1.0,
+      "Recall@5": 1.0,
+      "Precision@5": 0.56,
+      "MRR@5": 0.95,
+      "Hit@8": 1.0,
+      "Recall@8": 1.0,
+      "Precision@8": 0.3625,
+      "MRR@8": 0.95
+    },
+    "dist0_distribution": {
+      "answerable": {
+        "min": 0.1134,
+        "mean": 0.3307,
+        "median": 0.3324,
+        "p90": 0.4357,
+        "max": 0.4742,
+        "values": [
+          0.4574,
+          0.2732,
+          0.2966,
+          0.2453,
+          0.4143,
+          0.3625,
+          0.4742,
+          0.3015,
+          0.4357,
+          0.1134,
+          0.2419,
+          0.2765,
+          0.2615,
+          0.29,
+          0.3591,
+          0.3234,
+          0.2104,
+          0.4284,
+          0.4089,
+          0.3413,
+          0.3787,
+          0.3805
+        ]
+      },
+      "unanswerable": {
+        "min": 0.3967,
+        "mean": 0.5088,
+        "median": 0.4978,
+        "p90": 0.6081,
+        "max": 0.6081,
+        "values": [
+          0.6035,
+          0.42,
+          0.5106,
+          0.4541,
+          0.5926,
+          0.3967,
+          0.6081,
+          0.485
+        ]
+      }
+    },
+    "uncalibrated_055_eval": {
+      "threshold": 0.55,
+      "unanswerable_refusal_accuracy": 0.375,
+      "answerable_pass_rate": 1.0,
+      "false_refusal_rate": 0.0,
+      "balanced_accuracy": 0.6875
+    },
+    "calibrated_threshold_eval": {
+      "threshold": 0.44,
+      "unanswerable_refusal_accuracy": 0.75,
+      "answerable_pass_rate": 0.9091,
+      "false_refusal_rate": 0.0909,
+      "balanced_accuracy": 0.8295
+    },
+    "threshold_scan": [
+      {
+        "threshold": 0.28,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.3182,
+        "false_refusal_rate": 0.6818,
+        "balanced_accuracy": 0.6591
+      },
+      {
+        "threshold": 0.3,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.4091,
+        "false_refusal_rate": 0.5909,
+        "balanced_accuracy": 0.7045
+      },
+      {
+        "threshold": 0.32,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.4545,
+        "false_refusal_rate": 0.5455,
+        "balanced_accuracy": 0.7273
+      },
+      {
+        "threshold": 0.34,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.5,
+        "false_refusal_rate": 0.5,
+        "balanced_accuracy": 0.75
+      },
+      {
+        "threshold": 0.36,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.5909,
+        "false_refusal_rate": 0.4091,
+        "balanced_accuracy": 0.7955
+      },
+      {
+        "threshold": 0.38,
+        "unanswerable_refusal_accuracy": 1.0,
+        "answerable_pass_rate": 0.6818,
+        "false_refusal_rate": 0.3182,
+        "balanced_accuracy": 0.8409
+      },
+      {
+        "threshold": 0.4,
+        "unanswerable_refusal_accuracy": 0.875,
+        "answerable_pass_rate": 0.7273,
+        "false_refusal_rate": 0.2727,
+        "balanced_accuracy": 0.8011
+      },
+      {
+        "threshold": 0.42,
+        "unanswerable_refusal_accuracy": 0.75,
+        "answerable_pass_rate": 0.8182,
+        "false_refusal_rate": 0.1818,
+        "balanced_accuracy": 0.7841
+      },
+      {
+        "threshold": 0.44,
+        "unanswerable_refusal_accuracy": 0.75,
+        "answerable_pass_rate": 0.9091,
+        "false_refusal_rate": 0.0909,
+        "balanced_accuracy": 0.8295
+      },
+      {
+        "threshold": 0.46,
+        "unanswerable_refusal_accuracy": 0.625,
+        "answerable_pass_rate": 0.9545,
+        "false_refusal_rate": 0.0455,
+        "balanced_accuracy": 0.7898
+      },
+      {
+        "threshold": 0.48,
+        "unanswerable_refusal_accuracy": 0.625,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.8125
+      },
+      {
+        "threshold": 0.5,
+        "unanswerable_refusal_accuracy": 0.5,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.75
+      },
+      {
+        "threshold": 0.52,
+        "unanswerable_refusal_accuracy": 0.375,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.6875
+      },
+      {
+        "threshold": 0.54,
+        "unanswerable_refusal_accuracy": 0.375,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.6875
+      },
+      {
+        "threshold": 0.56,
+        "unanswerable_refusal_accuracy": 0.375,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.6875
+      },
+      {
+        "threshold": 0.58,
+        "unanswerable_refusal_accuracy": 0.375,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.6875
+      },
+      {
+        "threshold": 0.6,
+        "unanswerable_refusal_accuracy": 0.25,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.625
+      },
+      {
+        "threshold": 0.62,
+        "unanswerable_refusal_accuracy": 0.0,
+        "answerable_pass_rate": 1.0,
+        "false_refusal_rate": 0.0,
+        "balanced_accuracy": 0.5
+      }
+    ],
+    "per_query_logs": [
+      {
+        "id": "Q01",
+        "category": "direct_fact",
+        "query": "公司核心工作时段是几点到几点？每天午休时间是多长？",
+        "dist0": 0.4574,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 49.99,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.4574,
+            "rrf_score": 0.030328,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.4661,
+            "rrf_score": 0.028272,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.7212,
+            "rrf_score": 0.027599,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.5432,
+            "rrf_score": 0.027206,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.6646,
+            "rrf_score": 0.027206,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          }
+        ]
+      },
+      {
+        "id": "Q02",
+        "category": "direct_fact",
+        "query": "员工每个自然月有几次轻微迟到豁免权？允许在什么时间段打卡不扣款？",
+        "dist0": 0.2732,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 45.33,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.2732,
+            "rrf_score": 0.030328,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.4484,
+            "rrf_score": 0.029839,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.4566,
+            "rrf_score": 0.029365,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.5171,
+            "rrf_score": 0.028906,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.5612,
+            "rrf_score": 0.028263,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          }
+        ]
+      },
+      {
+        "id": "Q03",
+        "category": "direct_fact",
+        "query": "司龄满3年但未满5年的正式员工，每年享有几天带薪年假？未休完的年假最晚可顺延到什么时候？",
+        "dist0": 0.2966,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 46.24,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.2966,
+            "rrf_score": 0.030328,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.3485,
+            "rrf_score": 0.029839,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.3763,
+            "rrf_score": 0.029365,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.4712,
+            "rrf_score": 0.028906,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.5587,
+            "rrf_score": 0.028462,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          }
+        ]
+      },
+      {
+        "id": "Q04",
+        "category": "direct_fact",
+        "query": "公司规定的一类差旅城市有哪些？普通员工（P4-P6）在一类城市的住宿报销上限是多少？",
+        "dist0": 0.2453,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 44.2,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.2453,
+            "rrf_score": 0.030328,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.2547,
+            "rrf_score": 0.029839,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.3076,
+            "rrf_score": 0.029365,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.4842,
+            "rrf_score": 0.028702,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.5985,
+            "rrf_score": 0.026957,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          }
+        ]
+      },
+      {
+        "id": "Q05",
+        "category": "direct_fact",
+        "query": "员工报销时开具发票的抬头和纳税人识别号（税号）分别是什么？未开具增值税专用发票的住宿费怎么报销？",
+        "dist0": 0.4143,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 53.18,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.4143,
+            "rrf_score": 0.030328,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.4712,
+            "rrf_score": 0.029839,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.5462,
+            "rrf_score": 0.028906,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.5046,
+            "rrf_score": 0.02856,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.6721,
+            "rrf_score": 0.028002,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          }
+        ]
+      },
+      {
+        "id": "Q06",
+        "category": "direct_fact",
+        "query": "出差返程后需要在多少个工作日内提交报销单？超过30个自然日未提交会有什么后果？",
+        "dist0": 0.3625,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 48.14,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.3625,
+            "rrf_score": 0.030328,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.4889,
+            "rrf_score": 0.029583,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.4593,
+            "rrf_score": 0.02941,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.5391,
+            "rrf_score": 0.029117,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.5746,
+            "rrf_score": 0.027703,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          }
+        ]
+      },
+      {
+        "id": "Q07",
+        "category": "direct_fact",
+        "query": "公司内部系统账号密码的最小长度、字符种类要求以及强制更换周期分别是多少？",
+        "dist0": 0.4742,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 48.21,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4742,
+            "rrf_score": 0.030328,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5952,
+            "rrf_score": 0.02895,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.6649,
+            "rrf_score": 0.028861,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.6553,
+            "rrf_score": 0.028666,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5736,
+            "rrf_score": 0.028448,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          }
+        ]
+      },
+      {
+        "id": "Q08",
+        "category": "direct_fact",
+        "query": "在公司数据分级分类规范中，L3机密级和L4绝密级分别包含哪些典型数据？",
+        "dist0": 0.3015,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 47.58,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.3015,
+            "rrf_score": 0.030328,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4533,
+            "rrf_score": 0.029621,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4708,
+            "rrf_score": 0.029583,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.59,
+            "rrf_score": 0.028666,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.5729,
+            "rrf_score": 0.027768,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          }
+        ]
+      },
+      {
+        "id": "Q09",
+        "category": "direct_fact",
+        "query": "触发安全违规条款 SEC-2025-08-B 会受到什么具体处罚？",
+        "dist0": 0.4357,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 49.68,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 0.5,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 0.5,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 0.5
+        },
+        "top_docs": [
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4357,
+            "rrf_score": 0.030103,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4523,
+            "rrf_score": 0.030063,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.6605,
+            "rrf_score": 0.029117,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.6991,
+            "rrf_score": 0.027885,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_003",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.7011,
+            "rrf_score": 0.027838,
+            "snippet_preview": "SDK 中开启指数退避重试（建议初始退避 500ms，最大重试 3 次）； 2. 登录星云管理后台“系统设置 -> 流量配额”，检查是否存在异常脚本高频刷接口； 3. 如属正常业务高峰，可联系管理员在"
+          }
+        ]
+      },
+      {
+        "id": "Q10",
+        "category": "direct_fact",
+        "query": "星云智联企业知识引擎 V4.2 私有化部署对 CPU、内存和 GPU 显存的最低要求是什么？",
+        "dist0": 0.1134,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 51.15,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_001",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什么？",
+            "distance": 0.1134,
+            "rrf_score": 0.030328,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04 Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_000",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】",
+            "distance": 0.366,
+            "rrf_score": 0.029839,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.444,
+            "rrf_score": 0.02895,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.5222,
+            "rrf_score": 0.028877,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5048,
+            "rrf_score": 0.028504,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          }
+        ]
+      },
+      {
+        "id": "Q11",
+        "category": "direct_fact",
+        "query": "调用问答 API 返回错误码 ERR-4029 代表什么意思？默认单租户并发 QPS 和 TPM 上限是多少？",
+        "dist0": 0.2419,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 51.44,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.2419,
+            "rrf_score": 0.030328,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_003",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.4703,
+            "rrf_score": 0.029839,
+            "snippet_preview": "SDK 中开启指数退避重试（建议初始退避 500ms，最大重试 3 次）； 2. 登录星云管理后台“系统设置 -> 流量配额”，检查是否存在异常脚本高频刷接口； 3. 如属正常业务高峰，可联系管理员在"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_004",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q3: 增量建索引任务卡死并报错 ERR-5003（Chroma Lock Timeout）该如何处理？",
+            "distance": 0.4969,
+            "rrf_score": 0.029154,
+            "snippet_preview": "可联系管理员在 `nebula-gateway.yaml` 中将 `tenant_max_qps` 调高至 80 QPS（需确保后端 GPU 节点数 ≥ 2）。 Q3: 增量建索引任务卡死并报错 ER"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.5951,
+            "rrf_score": 0.028644,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.5804,
+            "rrf_score": 0.028462,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          }
+        ]
+      },
+      {
+        "id": "Q12",
+        "category": "direct_fact",
+        "query": "增量建索引报错 ERR-5003 是什么原因导致的？该如何恢复？",
+        "dist0": 0.2765,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 48.6,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.3333,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.2,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.125,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_004",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q3: 增量建索引任务卡死并报错 ERR-5003（Chroma Lock Timeout）该如何处理？",
+            "distance": 0.2765,
+            "rrf_score": 0.030328,
+            "snippet_preview": "可联系管理员在 `nebula-gateway.yaml` 中将 `tenant_max_qps` 调高至 80 QPS（需确保后端 GPU 节点数 ≥ 2）。 Q3: 增量建索引任务卡死并报错 ER"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.534,
+            "rrf_score": 0.029839,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.534,
+            "rrf_score": 0.029365,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_003",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.5873,
+            "rrf_score": 0.028702,
+            "snippet_preview": "SDK 中开启指数退避重试（建议初始退避 500ms，最大重试 3 次）； 2. 登录星云管理后台“系统设置 -> 流量配额”，检查是否存在异常脚本高频刷接口； 3. 如属正常业务高峰，可联系管理员在"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.6221,
+            "rrf_score": 0.028666,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          }
+        ]
+      },
+      {
+        "id": "Q13",
+        "category": "multi_hop",
+        "query": "某员工月基本工资为 21750 元，本月已使用完3次轻微迟到豁免权后，又发生1次迟到10分钟、1次迟到30分钟，并请了4天事假。请问他本月合计被扣减多少元（含考勤扣款与事假扣薪），且这4天事假需要由谁终审批准？",
+        "dist0": 0.2615,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 79.27,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 1.0,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.5,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.2615,
+            "rrf_score": 0.030328,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.3976,
+            "rrf_score": 0.029839,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.441,
+            "rrf_score": 0.029365,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.4508,
+            "rrf_score": 0.028906,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.5111,
+            "rrf_score": 0.028462,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          }
+        ]
+      },
+      {
+        "id": "Q14",
+        "category": "multi_hop",
+        "query": "两名 P5 级普通工程师结伴去杭州出差 3 天（住 2 晚），选择同住一间标准间，且按包干领取餐饮和市内交通补贴。请问他们两人这两晚住宿费合计最高可报销多少元？两人 3 天的餐饮加市内交通补贴总计多少元？",
+        "dist0": 0.29,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 75.02,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 1.0,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.375,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.29,
+            "rrf_score": 0.030328,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.3223,
+            "rrf_score": 0.029839,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.4568,
+            "rrf_score": 0.029154,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.4988,
+            "rrf_score": 0.029117,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.6067,
+            "rrf_score": 0.02803,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          }
+        ]
+      },
+      {
+        "id": "Q15",
+        "category": "multi_hop",
+        "query": "一位 P7 高级专家去武汉出差住 1 晚，实际住宿花费 690 元，但只开了增值税普通发票（未开专票）。请问他这笔住宿费是否需要超标特批？由谁审批？若按票面折算规则最终能报销多少元？",
+        "dist0": 0.3591,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 75.51,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 0.75,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.375,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.3591,
+            "rrf_score": 0.030328,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.3968,
+            "rrf_score": 0.029621,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.4411,
+            "rrf_score": 0.029583,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.5185,
+            "rrf_score": 0.028906,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.6098,
+            "rrf_score": 0.028263,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          }
+        ]
+      },
+      {
+        "id": "Q16",
+        "category": "multi_hop",
+        "query": "一名司龄满 6 年的员工因病持三甲医院证明请病假 6 天（当月累计6天），这 6 天病假需走哪级审批流程？前 2 天和后 4 天的病假工资分别按日基本工资的百分之多少发放？",
+        "dist0": 0.3234,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 77.76,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.3234,
+            "rrf_score": 0.030328,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.335,
+            "rrf_score": 0.029839,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.432,
+            "rrf_score": 0.029365,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.4866,
+            "rrf_score": 0.028702,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.6216,
+            "rrf_score": 0.027774,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          }
+        ]
+      },
+      {
+        "id": "Q17",
+        "category": "multi_hop",
+        "query": "某研发人员为了排查线上问题，离开工位 10 分钟未锁屏，且把一段核心算法源码发到了外部公网 AI 对话工具中（未造成外部扩散）。他分别违反了哪些安全规定？对应的数据密级是什么？合计会被扣减多少元绩效奖金？",
+        "dist0": 0.2104,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 76.49,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 0.75,
+          "Precision@3": 1.0,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.8,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.5,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.2104,
+            "rrf_score": 0.030328,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.3125,
+            "rrf_score": 0.029839,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.3415,
+            "rrf_score": 0.029365,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4673,
+            "rrf_score": 0.028906,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.5225,
+            "rrf_score": 0.028462,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          }
+        ]
+      },
+      {
+        "id": "Q18",
+        "category": "multi_hop",
+        "query": "如果生产数据库主密钥发生泄露，这属于什么密级的数据、哪一等级的安全事件？当事人和安全响应中心（SRC）分别需要在多长时间内完成上报、启动应急隔离和提交初步溯源报告？",
+        "dist0": 0.4284,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 72.68,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.4284,
+            "rrf_score": 0.030328,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5047,
+            "rrf_score": 0.029839,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5315,
+            "rrf_score": 0.029365,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5446,
+            "rrf_score": 0.028906,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.7188,
+            "rrf_score": 0.027294,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          }
+        ]
+      },
+      {
+        "id": "Q19",
+        "category": "multi_hop",
+        "query": "运维团队需要将单租户 API 并发上限从默认的 30 QPS 提升到 80 QPS，并同时开启本地重排与本地向量模型常驻。根据产品 FAQ，需要修改哪个配置文件的哪个参数？后端至少需要几个 GPU 节点以及推荐多少内存？",
+        "dist0": 0.4089,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 67.95,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 0.5,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 0.5,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.375,
+          "MRR@8": 0.5
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.4238,
+            "rrf_score": 0.029839,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_001",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什么？",
+            "distance": 0.4592,
+            "rrf_score": 0.029807,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04 Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_003",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.4089,
+            "rrf_score": 0.029675,
+            "snippet_preview": "SDK 中开启指数退避重试（建议初始退避 500ms，最大重试 3 次）； 2. 登录星云管理后台“系统设置 -> 流量配额”，检查是否存在异常脚本高频刷接口； 3. 如属正常业务高峰，可联系管理员在"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_004",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q3: 增量建索引任务卡死并报错 ERR-5003（Chroma Lock Timeout）该如何处理？",
+            "distance": 0.488,
+            "rrf_score": 0.029117,
+            "snippet_preview": "可联系管理员在 `nebula-gateway.yaml` 中将 `tenant_max_qps` 调高至 80 QPS（需确保后端 GPU 节点数 ≥ 2）。 Q3: 增量建索引任务卡死并报错 ER"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.5479,
+            "rrf_score": 0.028462,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          }
+        ]
+      },
+      {
+        "id": "Q20",
+        "category": "multi_hop",
+        "query": "一位用户想要上传一份 25 MB 的扫描版 PDF 合同（内含客户合同金额）到知识库并开启 OCR 解析。请结合产品 FAQ 和安全规范判断：文件大小是否符合上传限制？该合同属于什么数据密级？若开启 OCR 单页解析耗时约多久？",
+        "dist0": 0.3413,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 66.88,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 1.0,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.375,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.3413,
+            "rrf_score": 0.030328,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.4009,
+            "rrf_score": 0.029839,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5312,
+            "rrf_score": 0.029365,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5416,
+            "rrf_score": 0.028906,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_002",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5586,
+            "rrf_score": 0.027838,
+            "snippet_preview": "传至任何外部公有云 AI 对话工具、个人网盘或外部 GitHub 仓库。 研发人员调试代码必须使用公司内部私有化部署的星云代码助手（Nebula-Coder）。 第三章 安全事件应急响应与违规处罚条款"
+          }
+        ]
+      },
+      {
+        "id": "Q21",
+        "category": "multi_hop",
+        "query": "一名刚入职满 2 年的男员工（P6职级）因配偶生育申请休满全部陪产假，并在休假结束后去成都出差 2 天（住1晚）。请问他可休几天陪产假？这笔陪产假需要经过哪几级审批？他在成都出差期间住宿最高报销多少元、高铁可坐什么席别？",
+        "dist0": 0.3787,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 77.6,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 0.8,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.6,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.375,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.3787,
+            "rrf_score": 0.030328,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.4409,
+            "rrf_score": 0.029621,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.4875,
+            "rrf_score": 0.029583,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.4915,
+            "rrf_score": 0.028906,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.5115,
+            "rrf_score": 0.028462,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          }
+        ]
+      },
+      {
+        "id": "Q22",
+        "category": "multi_hop",
+        "query": "星云智联企业版每日自动全量备份的时间点、增量归档间隔以及 RPO/RTO 指标分别是什么？如果备份恢复后增量建索引遇到写锁超时，系统默认的等待锁超时时间是多少秒？",
+        "dist0": 0.3805,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 74.17,
+        "metrics": {
+          "Hit@3": 1.0,
+          "Recall@3": 1.0,
+          "Precision@3": 0.6667,
+          "MRR@3": 1.0,
+          "Hit@5": 1.0,
+          "Recall@5": 1.0,
+          "Precision@5": 0.4,
+          "MRR@5": 1.0,
+          "Hit@8": 1.0,
+          "Recall@8": 1.0,
+          "Precision@8": 0.25,
+          "MRR@8": 1.0
+        },
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.3805,
+            "rrf_score": 0.030328,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.4127,
+            "rrf_score": 0.029621,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_004",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q3: 增量建索引任务卡死并报错 ERR-5003（Chroma Lock Timeout）该如何处理？",
+            "distance": 0.4734,
+            "rrf_score": 0.029583,
+            "snippet_preview": "可联系管理员在 `nebula-gateway.yaml` 中将 `tenant_max_qps` 调高至 80 QPS（需确保后端 GPU 节点数 ≥ 2）。 Q3: 增量建索引任务卡死并报错 ER"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_001",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什么？",
+            "distance": 0.5149,
+            "rrf_score": 0.028263,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04 Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_003",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.5271,
+            "rrf_score": 0.028228,
+            "snippet_preview": "SDK 中开启指数退避重试（建议初始退避 500ms，最大重试 3 次）； 2. 登录星云管理后台“系统设置 -> 流量配额”，检查是否存在异常脚本高频刷接口； 3. 如属正常业务高峰，可联系管理员在"
+          }
+        ]
+      },
+      {
+        "id": "Q23",
+        "category": "unanswerable",
+        "query": "公司员工股票期权（ESOP）的归属期是几年？离职后行权回购价格如何计算？",
+        "dist0": 0.6035,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 50.52,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.6584,
+            "rrf_score": 0.029335,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.6035,
+            "rrf_score": 0.02908,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.607,
+            "rrf_score": 0.029008,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.6158,
+            "rrf_score": 0.028373,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.7746,
+            "rrf_score": 0.027191,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          }
+        ]
+      },
+      {
+        "id": "Q24",
+        "category": "unanswerable",
+        "query": "员工派驻欧洲（如瑞士、德国）海外出差时的每日外币伙食津贴和签证代办费报销标准是多少？",
+        "dist0": 0.42,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 47.79,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.42,
+            "rrf_score": 0.030103,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.5097,
+            "rrf_score": 0.02941,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.5838,
+            "rrf_score": 0.028263,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.7404,
+            "rrf_score": 0.02822,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_001",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.5131,
+            "rrf_score": 0.028192,
+            "snippet_preview": "P4—P6 / M1）、高级专家与总监（P7—P8 / M2—M3）、副总裁及以上（P9+ / M4+ / VP）。各职级交通工具及每晚住宿报销上限如下表所示： |  |  |  |  |  |  |"
+          }
+        ]
+      },
+      {
+        "id": "Q25",
+        "category": "unanswerable",
+        "query": "公司总部员工食堂的早晚餐刷卡补贴金额以及健身房开放时间是什么？",
+        "dist0": 0.5106,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 48.02,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.512,
+            "rrf_score": 0.030063,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.6017,
+            "rrf_score": 0.02895,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.5106,
+            "rrf_score": 0.02788,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.7555,
+            "rrf_score": 0.027794,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_003",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "第五条 增值税专用发票/普通发票开具信息必须准确无误：",
+            "distance": 0.7013,
+            "rrf_score": 0.027244,
+            "snippet_preview": "约车票据；若因携带重型测试设备确需实报实销打车费，须放弃当日 80 元交通包干并附上行程单。 ## 四、 发票合规与报销审批时限（条款 FIN-RULE-09） 第五条 增值税专用发票/普通发票开具信"
+          }
+        ]
+      },
+      {
+        "id": "Q26",
+        "category": "unanswerable",
+        "query": "星云智联企业版出现错误码 ERR-9099（许可证签名校验失效）时应该如何重新激活授权？",
+        "dist0": 0.4541,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 52.75,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.4541,
+            "rrf_score": 0.030328,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_000",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】",
+            "distance": 0.5069,
+            "rrf_score": 0.029206,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_003",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.5545,
+            "rrf_score": 0.029117,
+            "snippet_preview": "SDK 中开启指数退避重试（建议初始退避 500ms，最大重试 3 次）； 2. 登录星云管理后台“系统设置 -> 流量配额”，检查是否存在异常脚本高频刷接口； 3. 如属正常业务高峰，可联系管理员在"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_004",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q3: 增量建索引任务卡死并报错 ERR-5003（Chroma Lock Timeout）该如何处理？",
+            "distance": 0.6149,
+            "rrf_score": 0.028635,
+            "snippet_preview": "可联系管理员在 `nebula-gateway.yaml` 中将 `tenant_max_qps` 调高至 80 QPS（需确保后端 GPU 节点数 ≥ 2）。 Q3: 增量建索引任务卡死并报错 ER"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.5917,
+            "rrf_score": 0.028433,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          }
+        ]
+      },
+      {
+        "id": "Q27",
+        "category": "unanswerable",
+        "query": "公司应届生校招落户北京的户口指标评分细则和住房租房补贴每月多少钱？",
+        "dist0": 0.5926,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 48.94,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_002",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "二、 职级划分与交通住宿报销标准",
+            "distance": 0.5999,
+            "rrf_score": 0.029839,
+            "snippet_preview": "/晚 | | 副总裁及以上 (P9+ / M4+ / VP) | 商务座/一等座 | 公务舱/头等舱 | 1200元/晚 | 900元/晚 | 700元/晚 | 第三条 同性员工共同出差原则上鼓励拼房"
+          },
+          {
+            "chunk_id": "差旅与费用报销管理规范_e5d6c6_000",
+            "source": "差旅与费用报销管理规范.docx",
+            "section": "星云智联差旅与费用报销管理规范（FIN-2026-02）",
+            "distance": 0.6621,
+            "rrf_score": 0.029117,
+            "snippet_preview": "# 星云智联差旅与费用报销管理规范（FIN-2026-02） ## 一、 差旅城市分级定义 第一条 为合理控制差旅成本，公司将国内出差目的地划分为三个等级： 1. 一类城市（一线及核心新一线）：北京、"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.6419,
+            "rrf_score": 0.02856,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_003",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.7177,
+            "rrf_score": 0.027885,
+            "snippet_preview": "-08-A（轻度违规）：未按规定锁屏、弱口令整改超时或私自安装非白名单工具软件的，给予内部通报批评，并扣减当季安全绩效分 15 分（折合绩效奖金 500 元）； 2. 条款 SEC-2025-08-B"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.7567,
+            "rrf_score": 0.027363,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          }
+        ]
+      },
+      {
+        "id": "Q28",
+        "category": "unanswerable",
+        "query": "星云智联 V4.2 企业版单套私有化商业软件授权的年度订阅报价和维保服务费率是多少？",
+        "dist0": 0.3967,
+        "predicted_path_by_dist": "normal",
+        "latency_ms": 49.72,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_001",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什么？",
+            "distance": 0.3967,
+            "rrf_score": 0.030328,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04 Q1: 星云智联企业知识引擎 V4.2 私有化部署的最低硬件配置要求是什"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_000",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】",
+            "distance": 0.4222,
+            "rrf_score": 0.029621,
+            "snippet_preview": "【星云智联（Nebula-AI）企业知识引擎 V4.2 产品技术支持与运维 FAQ】 文档编号：PRD-FAQ-2026-04"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_002",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q2: 调用知识检索或问答 API 时返回错误码 ERR-4029 是什么原因？如何解决？",
+            "distance": 0.5199,
+            "rrf_score": 0.028752,
+            "snippet_preview": "GB SSD，数据盘至少 1 TB NVMe SSD（IOPS ≥ 30000）； - 操作系统：Ubuntu 22.04 LTS 或银河麒麟 V10 SP2。 Q2: 调用知识检索或问答 API 时"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.5683,
+            "rrf_score": 0.028002,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_005",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q4: 星云智联支持哪些文档格式的解析？单文件上传大小限制和 OCR 规则是什么？",
+            "distance": 0.5893,
+            "rrf_score": 0.027987,
+            "snippet_preview": "临时文件，清理后重新调用 `POST /index` 的 `incremental` 增量模式即可恢复，已成功入库的文件因具有 MD5 校验不会重复计算向量。 Q4: 星云智联支持哪些文档格式的解析？"
+          }
+        ]
+      },
+      {
+        "id": "Q29",
+        "category": "unanswerable",
+        "query": "员工申请内部转岗（活水计划）需要满足多长在岗时间，以及转岗面试有几轮？",
+        "dist0": 0.6081,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 46.04,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_002",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第四条 带薪年休假（年假）阶梯标准：",
+            "distance": 0.6081,
+            "rrf_score": 0.029886,
+            "snippet_preview": "：员工因公外出或设备故障漏打卡，每自然月最多可提交 4 次线上补卡申请，须在漏卡发生后 3 个工作日内由直属主管审批通过。 ## 第三章 各类假期标准与薪资计算 第四条 带薪年休假（年假）阶梯标准： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_000",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "星云智联科技有限公司员工手册与考勤休假制度（2026版）",
+            "distance": 0.6825,
+            "rrf_score": 0.029319,
+            "snippet_preview": "# 星云智联科技有限公司员工手册与考勤休假制度（2026版） ## 第一章 总则与工时标准 第一条 为规范星云智联科技有限公司（以下简称“公司”）员工考勤与休假管理，保障员工合法权益，特制定本制度。本"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_001",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第三条 异常考勤处理与薪酬扣减计算标准：",
+            "distance": 0.6722,
+            "rrf_score": 0.028906,
+            "snippet_preview": "1.5 小时午休）。 - 凡在 10:01 及之后完成首次打卡者，视为迟到；未满当日应出勤时长提前打卡离开者，视为早退。 ## 第二章 迟到、早退与旷工扣款规则 第三条 异常考勤处理与薪酬扣减计算标准"
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.6147,
+            "rrf_score": 0.028629,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.6605,
+            "rrf_score": 0.02856,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          }
+        ]
+      },
+      {
+        "id": "Q30",
+        "category": "unanswerable",
+        "query": "研发人员周末加班调休券的有效期是多久？法定节假日三倍工资基数上限是多少？",
+        "dist0": 0.485,
+        "predicted_path_by_dist": "refusal",
+        "latency_ms": 48.32,
+        "metrics": {},
+        "top_docs": [
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_004",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第六条 婚假、产假、陪产假与育儿假：",
+            "distance": 0.5281,
+            "rrf_score": 0.028312,
+            "snippet_preview": "病假部分，司龄未满 5 年者按本人日基本工资的 60% 发放，司龄满 5 年及以上者按本人日基本工资的 75% 发放。 ## 第四章 专项福利假与跨部门审批流程 第六条 婚假、产假、陪产假与育儿假： "
+          },
+          {
+            "chunk_id": "员工手册与考勤休假制度_16076c_003",
+            "source": "员工手册与考勤休假制度.md",
+            "section": "第五条 事假与病假薪资核算规则：",
+            "distance": 0.5057,
+            "rrf_score": 0.028272,
+            "snippet_preview": "假。 年假最小请假单位为 0.5 天，当年未休完的年假可顺延至次年 3 月 31 日前休完，逾期自动作废且不予折算现金（因公司业务紧急书面要求取消休假的除外）。 第五条 事假与病假薪资核算规则： 1."
+          },
+          {
+            "chunk_id": "星云智联企业版产品FAQ_760747_006",
+            "source": "星云智联企业版产品FAQ.txt",
+            "section": "Q5: 企业版的数据备份策略与 RTO/RPO 灾备指标是多少？",
+            "distance": 0.7871,
+            "rrf_score": 0.027268,
+            "snippet_preview": "传的是纯扫描件图片型 PDF，需在上传接口显式附加参数 `enable_ocr=true` 调用 PaddleOCR 插件，开启后单页解析耗时约为 800ms。 Q5: 企业版的数据备份策略与 RTO"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_000",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.7507,
+            "rrf_score": 0.02698,
+            "snippet_preview": "星云智联IT信息安全与数据合规规范（SEC-2026-03） 第一章 账号口令与终端安全策略 第一条（密码复杂度与有效期）公司所有内部系统（含代码仓库 GitLab、SSO 单点登录、内网 VPN、云"
+          },
+          {
+            "chunk_id": "IT信息安全与数据合规规范_9165fa_001",
+            "source": "IT信息安全与数据合规规范.pdf",
+            "section": "第三条 公司业务与研发数据按敏感程度划分为四个密级：",
+            "distance": 0.7221,
+            "rrf_score": 0.026966,
+            "snippet_preview": "名单认证的远程控制软件（如向日葵、ToDesk 个人版）或破解版商业软件。 第二章 数据分级分类与传输红线 第三条 公司业务与研发数据按敏感程度划分为四个密级： 1. L1 公开级（Public）：对"
+          }
+        ]
+      }
+    ]
+  }
+}

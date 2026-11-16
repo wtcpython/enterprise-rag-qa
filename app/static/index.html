@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>企业知识库问答系统</title>
+  <script>
+    window.tailwind = window.tailwind || {};
+    window.tailwind.config = { darkMode: 'media' };
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    #queryInput { field-sizing: content; max-height: 144px; }
+    #mainToolbar { container-type: inline-size; }
+    @container (max-width: 660px) {
+      #healthBadge { flex-direction: column; align-items: flex-start; gap: 0; }
+    }
+    @supports (position-area: top) {
+      .citation-pop {
+        inset: auto;
+        margin: 6px 0;
+        position-anchor: auto;
+        position-area: top span-all;
+        position-try-fallbacks: flip-block, top span-right, top span-left, bottom span-right, bottom span-left;
+      }
+    }
+    @media (min-width: 821px) {
+      #sidebarToggle:checked ~ #leftSidebar { margin-left: -272px; }
+      #sidebarToggle:checked ~ main #openSidebarBtn { display: inline-flex; }
+      #sidebarToggle:checked ~ main #mainToolbar { padding-left: 3rem; }
+    }
+    @media (max-width: 820px) {
+      #leftSidebar { position: fixed; inset: 0 auto 0 0; z-index: 30; box-shadow: 0 20px 25px -5px rgb(0 0 0 / .1); transform: translateX(-100%); }
+      #sidebarToggle:checked ~ #leftSidebar { transform: translateX(0); }
+      #sidebarToggle:checked ~ #sidebarBackdrop { opacity: 1; pointer-events: auto; }
+      main #openSidebarBtn { display: inline-flex; }
+      main #mainToolbar { padding-left: 3rem; }
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 h-screen overflow-hidden flex flex-col">
+
+  <div class="flex-1 flex overflow-hidden">
+    <input type="checkbox" id="sidebarToggle" hidden />
+
+    <!-- 左侧栏：文档、索引与缓存 -->
+    <aside id="leftSidebar" class="w-[272px] bg-slate-50/60 dark:bg-slate-900/60 border-r border-slate-200 dark:border-slate-800 flex flex-col shrink-0 overflow-y-auto p-3 space-y-3 text-xs transition-[margin-left,transform] duration-200 ease-out">
+      <div class="flex items-center justify-between pb-1">
+        <div class="flex min-w-0 items-center gap-2">
+          <h1 class="truncate text-sm font-semibold tracking-tight text-slate-900 dark:text-slate-100">企业知识库问答</h1>
+        </div>
+        <label for="sidebarToggle" role="button" aria-label="收起侧栏" title="收起侧栏"
+          class="cursor-pointer rounded-md p-1.5 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </label>
+      </div>
+      <!-- 文档管理 -->
+      <div class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-3 space-y-2.5">
+        <div class="flex items-center justify-between">
+          <span class="font-semibold text-slate-900 dark:text-slate-100">知识库文档</span>
+          <button onclick="loadDocuments()" aria-label="刷新文档列表" title="刷新文档列表"
+            class="rounded-md p-1 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-slate-100 transition">
+            <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h5M20 20v-5h-5M5.05 9A7 7 0 0117.9 6.1L20 9M4 15l2.1 2.9A7 7 0 0018.95 15"/>
+            </svg>
+          </button>
+        </div>
+        <input id="fileInput" type="file" accept=".pdf,.docx,.md,.txt"
+          class="block w-full rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-[11px] text-slate-600 dark:text-slate-400 file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-[11px] file:bg-slate-100 dark:file:bg-slate-800 file:text-slate-700 dark:file:text-slate-300 cursor-pointer p-1" />
+        <button onclick="uploadFile()"
+          class="w-full rounded-md py-1.5 bg-slate-900 dark:bg-slate-100 hover:bg-slate-700 dark:hover:bg-white text-white dark:text-slate-900 font-medium transition">
+          上传文档
+        </button>
+        <ul id="docList" class="space-y-1.5 max-h-44 overflow-y-auto pt-1"></ul>
+      </div>
+
+      <!-- 索引构建 -->
+      <div class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-3 space-y-2.5">
+        <div class="font-semibold text-slate-900 dark:text-slate-100">索引构建</div>
+        <select id="indexMode" class="w-full rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 px-2 py-1.5">
+          <option value="incremental" selected>incremental (MD5 增量)</option>
+          <option value="rebuild">rebuild (全量重建)</option>
+        </select>
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">chunk_size</span>
+            <input id="chunkSize" type="number" value="400" min="100" max="2000"
+              class="w-full rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 px-2 py-1 mt-0.5" />
+          </div>
+          <div>
+            <span class="text-[11px] text-slate-500 dark:text-slate-400">overlap</span>
+            <input id="chunkOverlap" type="number" value="80" min="0" max="500"
+              class="w-full rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 px-2 py-1 mt-0.5" />
+          </div>
+        </div>
+        <button id="indexBtn" onclick="buildIndex()"
+          class="w-full rounded-md py-1.5 bg-slate-900 dark:bg-slate-100 hover:bg-slate-700 dark:hover:bg-white text-white dark:text-slate-900 font-medium transition">
+          构建索引
+        </button>
+        <div id="indexResultBox" class="hidden p-2 rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[11px] space-y-0.5"></div>
+      </div>
+
+      <!-- 缓存监控 -->
+      <div class="rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 p-3 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="font-semibold text-slate-900 dark:text-slate-100">问答缓存</span>
+          <button onclick="clearCache()" class="text-[11px] text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100">清空</button>
+        </div>
+        <div class="grid grid-cols-3 gap-1 text-center text-[11px]">
+          <div class="p-1.5 rounded bg-slate-50 dark:bg-slate-800">
+            <div class="text-slate-400 dark:text-slate-500">条数</div>
+            <div id="cacheEntries" class="font-semibold text-slate-800 dark:text-slate-200">0</div>
+          </div>
+          <div class="p-1.5 rounded bg-slate-50 dark:bg-slate-800">
+            <div class="text-slate-400 dark:text-slate-500">命中</div>
+            <div id="cacheHitMiss" class="font-semibold text-emerald-600 dark:text-emerald-400">0/0</div>
+          </div>
+          <div class="p-1.5 rounded bg-slate-50 dark:bg-slate-800">
+            <div class="text-slate-400 dark:text-slate-500">命中率</div>
+            <div id="cacheHitRate" class="font-semibold text-blue-600 dark:text-blue-400">0%</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <label id="sidebarBackdrop" for="sidebarToggle"
+      class="pointer-events-none fixed inset-0 z-20 bg-slate-950/30 opacity-0 transition-opacity duration-200 dark:bg-slate-950/60"></label>
+
+    <!-- 主对话区 -->
+    <main class="relative flex-1 flex flex-col bg-white dark:bg-slate-950 overflow-hidden">
+      <div id="mainToolbar" class="flex min-h-12 shrink-0 flex-wrap items-center justify-between gap-x-3 gap-y-1 px-4 py-2">
+        <span id="healthBadge" class="hidden min-w-0 max-w-full md:inline-flex items-center gap-1 rounded bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[11px] text-slate-500 dark:text-slate-400 whitespace-nowrap">
+          <span id="healthModel">检查中...</span>
+          <span id="healthEmbedding"></span>
+          <span id="healthChunks"></span>
+        </span>
+        <div id="toolbarActions" class="ml-auto flex max-w-full flex-wrap items-center justify-end gap-2 text-xs">
+          <button onclick="runAcceptanceDemo()" id="demoBtn"
+            class="rounded-md bg-slate-900 dark:bg-slate-100 px-2.5 py-1 font-medium text-white dark:text-slate-900 transition hover:bg-slate-700 dark:hover:bg-white">
+            一键演示
+          </button>
+          <button type="button" commandfor="evalModal" command="show-modal"
+            class="rounded-md border border-slate-200 dark:border-slate-800 px-2.5 py-1 font-medium text-slate-700 dark:text-slate-300 transition hover:bg-slate-100 dark:hover:bg-slate-800">
+            实验数据
+          </button>
+          <button onclick="clearChatHistory()"
+            class="rounded-md border border-slate-200 dark:border-slate-800 px-2.5 py-1 text-slate-600 dark:text-slate-400 transition hover:bg-slate-100 dark:hover:bg-slate-800">
+            清空对话
+          </button>
+          <a href="/docs" target="_blank"
+            class="rounded-md border border-slate-200 dark:border-slate-800 px-2.5 py-1 text-slate-600 dark:text-slate-400 transition hover:bg-slate-100 dark:hover:bg-slate-800">
+            API
+          </a>
+        </div>
+      </div>
+      <label id="openSidebarBtn" for="sidebarToggle" role="button" aria-label="展开侧栏" title="展开侧栏"
+        class="cursor-pointer absolute left-3 top-3 z-10 hidden rounded-md p-1.5 text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </label>
+
+      <!-- 聊天记录滚动流 -->
+      <div id="chatTimeline" class="flex-1 overflow-y-auto px-4 md:px-8 py-6 space-y-4">
+        <!-- 快捷示例（数据驱动单源渲染） -->
+        <div id="sampleCardsContainer" class="max-w-3xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-2 text-xs"></div>
+
+        <!-- 消息流容器 -->
+        <div id="messagesContainer" class="max-w-3xl mx-auto space-y-4 pb-2"></div>
+      </div>
+
+      <!-- 底部输入栏 -->
+      <div class="shrink-0 px-4 md:px-8 pb-4 pt-1">
+        <div class="max-w-3xl mx-auto bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800 shadow-sm p-2.5 space-y-2">
+          <div class="flex flex-wrap items-center justify-between gap-2 text-xs px-1">
+            <div class="flex flex-wrap items-center gap-2">
+              <select id="askMode" class="rounded-md border border-slate-200 dark:border-slate-800 px-2 py-1 bg-white dark:bg-slate-950 font-medium text-slate-700 dark:text-slate-300">
+                <option value="optimized" selected>optimized (混合检索 + Rerank + 校准阈值)</option>
+                <option value="hybrid">hybrid (BM25S+向量混合检索)</option>
+                <option value="threshold_tuned">threshold_tuned (纯向量 + 阈值 0.44)</option>
+                <option value="baseline">baseline (纯向量 + 初始阈值 0.55)</option>
+              </select>
+              <span class="text-slate-400 dark:text-slate-500">recall_k</span>
+              <input id="recallK" type="number" value="8" min="1" max="20" class="w-11 rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 px-1.5 py-0.5 text-center" />
+              <span class="text-slate-400 dark:text-slate-500">top_k</span>
+              <input id="topK" type="number" value="4" min="1" max="10" class="w-11 rounded-md border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 px-1.5 py-0.5 text-center" />
+            </div>
+            <label class="inline-flex items-center gap-1 cursor-pointer select-none text-slate-500">
+              <input id="useCacheToggle" type="checkbox" checked class="rounded text-blue-600" />
+              <span>缓存</span>
+            </label>
+          </div>
+
+          <div class="flex items-end gap-2">
+            <textarea id="queryInput" rows="1"
+              placeholder="输入问题（Enter 发送）..."
+              class="flex-1 resize-none border-0 bg-transparent px-2 py-1 text-sm text-slate-800 dark:text-slate-200 placeholder-slate-400 focus:outline-none"
+              onkeydown="handleInputKeydown(event)"></textarea>
+            <button id="askBtn" onclick="askQuestion()" aria-label="发送问题" title="发送问题"
+              class="rounded-md p-2 bg-slate-900 dark:bg-slate-100 hover:bg-slate-700 dark:hover:bg-white disabled:bg-slate-300 text-white dark:text-slate-900 shrink-0 transition">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M13 6l6 6-6 6"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- 实验数据弹窗 -->
+  <dialog id="evalModal" closedby="any" class="m-auto bg-white dark:bg-slate-900 rounded-lg shadow-xl border border-slate-200 dark:border-slate-800 max-w-4xl w-[calc(100%-2rem)] max-h-[85vh] overflow-y-auto p-0 text-slate-900 dark:text-slate-100 backdrop:bg-slate-950/40">
+    <div class="p-5 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-2.5">
+        <h2 class="text-base font-bold text-slate-900 dark:text-slate-100">端到端单变量对比实验与失败案例</h2>
+        <button type="button" commandfor="evalModal" command="close" aria-label="关闭实验数据" title="关闭"
+          class="rounded-md p-1.5 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400 transition">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs text-left border border-slate-200 dark:border-slate-800">
+          <thead class="bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+            <tr>
+              <th class="p-2 border-b border-slate-200 dark:border-slate-700">模式</th>
+              <th class="p-2 border-b border-slate-200 dark:border-slate-700">单变量改动</th>
+              <th class="p-2 border-b border-slate-200 dark:border-slate-700">可回答正确率</th>
+              <th class="p-2 border-b border-slate-200 dark:border-slate-700">多跳正确率</th>
+              <th class="p-2 border-b border-slate-200 dark:border-slate-700">忠实度</th>
+              <th class="p-2 border-b border-slate-200 dark:border-slate-700">拒答准确率</th>
+              <th class="p-2 border-b border-slate-200 dark:border-slate-700">误拒数</th>
+              <th class="p-2 border-b border-slate-200 dark:border-slate-700">平均耗时</th>
+              <th class="p-2 border-b border-slate-200 dark:border-slate-700">问答 Token</th>
+            </tr>
+          </thead>
+          <tbody id="evalTableBody" class="divide-y divide-slate-200 dark:divide-slate-800">
+            <tr>
+              <td colspan="9" class="p-4 text-center text-slate-400 dark:text-slate-500">正在从 outputs/ 加载真实评测报告...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div id="evalCasesContainer" class="grid grid-cols-1 md:grid-cols-2 gap-2.5 text-xs"></div>
+    </div>
+  </dialog>
+
+  <script>
+    if (window.marked) {
+      marked.setOptions({ gfm: true, breaks: true });
+    }
+
+    const $ = id => document.getElementById(id);
+    let turnSeq = 0;
+
+    // 通用轻量 API 请求客户端（自动处理 JSON 序列化与统一错误提取）
+    async function apiRequest(url, options = {}) {
+      const isJson = options.body && !(options.body instanceof FormData);
+      const headers = isJson
+        ? { 'Content-Type': 'application/json', ...options.headers }
+        : (options.headers || {});
+      const body = isJson ? JSON.stringify(options.body) : options.body;
+      const res = await fetch(url, { ...options, headers, body });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        throw new Error(data.detail || `请求失败 (${res.status})`);
+      }
+      return data;
+    }
+
+    // 预置典型问答与演示示例（单数据源，页面启动时由 /samples 动态加载）
+    let sampleQuestions = [];
+
+    function renderSampleCards() {
+      const container = $('sampleCardsContainer');
+      if (!container) return;
+      container.innerHTML = sampleQuestions.map((item, idx) => {
+        return `
+          <button type="button" onclick="handleSampleClick(${idx})"
+            class="text-left p-2.5 rounded-lg bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 border border-slate-200 dark:border-slate-800 hover:border-slate-400 dark:hover:border-slate-600 transition">
+            <div class="font-semibold text-slate-900 dark:text-slate-100">${escapeHtml(item.category)}</div>
+            <div class="text-slate-500 dark:text-slate-400 text-[11px] truncate mt-0.5" title="${escapeHtml(item.query)}">${escapeHtml(item.subtitle)}</div>
+          </button>
+        `;
+      }).join('');
+    }
+
+    async function loadSamples() {
+      try {
+        sampleQuestions = await apiRequest('/samples');
+        renderSampleCards();
+      } catch (e) {
+        // 网络异常时静默处理
+      }
+    }
+
+    function handleSampleClick(index) {
+      const sample = sampleQuestions[index];
+      if (!sample) return;
+      $('queryInput').value = sample.query;
+      executeQuery(sample.query);
+    }
+
+    function escapeHtml(str) {
+      return (str || '').replace(/[&<>"']/g, m => ({
+        '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+      }[m]));
+    }
+
+    function extractKeywords(text) {
+      if (!text) return [];
+      const stopWords = new Set(['什么', '怎么', '如何', '多少', '哪些', '请问', '公司', '企业', '如果', '是否', '可以', '需要', '规定', '制度', '标准', '以及', '或者', '我们', '一个', '几次', '几天', '是谁', '来源', '根据']);
+      const rawTokens = text.match(/[\u4e00-\u9fa5]{2,6}|[A-Za-z0-9_\-\.]{2,}/g) || [];
+      return [...new Set(rawTokens.filter(t => !stopWords.has(t) && t.length >= 2))]
+        .sort((a, b) => b.length - a.length)
+        .slice(0, 10);
+    }
+
+    function highlightKeywords(markdownText, keywordSourceText) {
+      if (!markdownText) return '';
+      let html = window.marked ? marked.parse(markdownText) : escapeHtml(markdownText);
+      const kws = extractKeywords(keywordSourceText);
+      for (const kw of kws) {
+        const escapedKw = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        html = html.replace(new RegExp(`(<[^>]+>)|(${escapedKw})`, 'gi'), (m, tag, kwMatch) => {
+          return tag ? tag : `<mark class="bg-yellow-200 dark:bg-yellow-800 text-yellow-900 dark:text-yellow-100 px-0.5 rounded">${kwMatch}</mark>`;
+        });
+      }
+      return html;
+    }
+
+    // 仅截取与当前引用句最匹配的 1~2 行/句核心 Markdown 片段
+    function extractRelevantSnippet(chunkText, claimContext, query) {
+      if (!chunkText) return '';
+      const lines = chunkText
+        .split(/\n+/)
+        .map(s => s.trim())
+        .filter(Boolean);
+
+      if (lines.length <= 2 && chunkText.length <= 160) {
+        return chunkText;
+      }
+
+      const kws = extractKeywords(`${claimContext} ${query}`);
+      if (!kws.length) {
+        return lines.slice(0, 2).join('\n');
+      }
+
+      let bestIdx = 0;
+      let maxScore = -1;
+      lines.forEach((line, idx) => {
+        // 跳过纯 Markdown 表格分隔行
+        if (/^\|[\s\-:|]+\|$/.test(line)) return;
+        let score = 0;
+        for (const kw of kws) {
+          if (line.toLowerCase().includes(kw.toLowerCase())) score += kw.length;
+        }
+        if (score > maxScore) {
+          maxScore = score;
+          bestIdx = idx;
+        }
+      });
+
+      const matchedLine = lines[bestIdx] || lines[0];
+
+      // 若命中行为 Markdown 表格数据行，附带表头与分隔行以保证表格正常渲染
+      if (matchedLine.startsWith('|') && matchedLine.endsWith('|')) {
+        let headerIdx = -1;
+        for (let i = bestIdx - 1; i >= 0; i--) {
+          if (/^\|[\s\-:|]+\|$/.test(lines[i]) && i - 1 >= 0 && lines[i - 1].startsWith('|')) {
+            headerIdx = i - 1;
+            break;
+          }
+        }
+        if (headerIdx !== -1 && headerIdx !== bestIdx) {
+          return [lines[headerIdx], lines[headerIdx + 1], matchedLine].join('\n');
+        }
+      }
+
+      let selected = [matchedLine];
+      // 若最佳行是标题，补充下一行正文；若较短，补充相邻行
+      if ((matchedLine.startsWith('#') || matchedLine.length < 75) && bestIdx + 1 < lines.length) {
+        if (!/^\|[\s\-:|]+\|$/.test(lines[bestIdx + 1])) {
+          selected.push(lines[bestIdx + 1]);
+        }
+      }
+
+      let snippet = selected.join('\n');
+      if (snippet.length > 200 && !snippet.startsWith('|')) {
+        snippet = snippet.slice(0, 200) + '…';
+        const boldCount = (snippet.match(/\*\*/g) || []).length;
+        if (boldCount % 2 !== 0) snippet += '**';
+      }
+      return snippet;
+    }
+
+    function buildCitationPopoverHtml(popId, sourceLabel, claimContext, query, candidates) {
+      const kws = extractKeywords(`${claimContext} ${sourceLabel}`);
+      let bestItem = candidates[0] || null;
+      let bestScore = -1;
+
+      for (const item of candidates) {
+        let score = 0;
+        if (sourceLabel.includes(item.source) || item.source.includes(sourceLabel)) score += 20;
+        if (item.section && sourceLabel.includes(item.section)) score += 15;
+        if (item.chunk_id && sourceLabel.includes(item.chunk_id)) score += 25;
+        for (const kw of kws) {
+          if (item.text.toLowerCase().includes(kw.toLowerCase())) score += kw.length;
+        }
+        if (score > bestScore) {
+          bestScore = score;
+          bestItem = item;
+        }
+      }
+
+      const bodyHtml = bestItem
+        ? highlightKeywords(extractRelevantSnippet(bestItem.text, claimContext, query), `${claimContext} ${query}`)
+        : '未关联具体上下文片段';
+      const rerankInfo = bestItem?.rerank_score !== null && bestItem?.rerank_score !== undefined
+        ? ` · Rerank ${bestItem.rerank_score}` : '';
+      const metaHtml = bestItem
+        ? `<span class="truncate">${escapeHtml(bestItem.source)}${bestItem.section ? ' · ' + escapeHtml(bestItem.section) : ''}</span>
+           <span class="shrink-0 font-mono ml-2">d=${bestItem.distance}${rerankInfo}</span>`
+        : escapeHtml(sourceLabel);
+
+      return `<div id="${popId}" popover="auto" class="citation-pop w-96 max-w-[90vw] bg-white dark:bg-slate-900 rounded-lg shadow-lg border border-slate-200 dark:border-slate-800 px-3.5 py-2.5 text-xs text-slate-900 dark:text-slate-100 space-y-1.5">
+        <div>${bodyHtml}</div>
+        <div class="text-[11px] text-slate-400 dark:text-slate-500 flex items-center justify-between pt-1 border-t border-slate-100 dark:border-slate-800">${metaHtml}</div>
+      </div>`;
+    }
+
+    function renderMarkdownWithCitations(markdownText, turnId, query, response) {
+      if (!markdownText) return { html: '', popoversHtml: '' };
+      const candidates = response.contexts?.length ? response.contexts : (response.docs || []);
+      let html = window.marked ? marked.parse(markdownText) : escapeHtml(markdownText);
+      let citeIdx = 0;
+      let popoversHtml = '';
+      html = html.replace(/\[来源[:：]\s*([^\]]+)\]/g, (match, inner, offset, fullStr) => {
+        const cleanSource = inner.trim();
+        const popId = `cit-${turnId}-${citeIdx++}`;
+        const claimBefore = fullStr.slice(Math.max(0, offset - 100), offset).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ');
+        popoversHtml += buildCitationPopoverHtml(popId, cleanSource, claimBefore, query, candidates);
+        return `<button type="button" popovertarget="${popId}" class="inline-flex items-center rounded border border-slate-300 dark:border-slate-700 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 px-1.5 mx-0.5 text-xs hover:bg-slate-200 dark:hover:bg-slate-700">${escapeHtml(cleanSource)}</button>`;
+      });
+      return { html, popoversHtml };
+    }
+
+    function clearChatHistory() {
+      turnSeq = 0;
+      $('messagesContainer').innerHTML = '';
+    }
+
+    async function loadEvalResults() {
+      const tbody = $('evalTableBody');
+      const casesContainer = $('evalCasesContainer');
+      try {
+        const data = await apiRequest('/eval/results');
+        if (!data.available || !data.summary || !data.summary.length) {
+          tbody.innerHTML = `<tr><td colspan="9" class="p-4 text-center text-slate-400 dark:text-slate-500">${escapeHtml(data.message || '暂无评测报告')}</td></tr>`;
+          casesContainer.innerHTML = '';
+          return;
+        }
+
+        tbody.innerHTML = data.summary.map(row => {
+          const isOptimized = row.mode === 'optimized';
+          const rowCls = isOptimized ? 'bg-emerald-50/60 dark:bg-emerald-950/40 font-semibold' : '';
+          const txtCls = isOptimized ? 'text-emerald-700 dark:text-emerald-300' : '';
+          const falseRefusalCls = row.false_refusal_count > 0
+            ? 'text-rose-600 dark:text-rose-400'
+            : (isOptimized ? 'text-emerald-700 dark:text-emerald-300' : '');
+          return `
+            <tr class="${rowCls}">
+              <td class="p-2 font-medium ${isOptimized ? 'text-emerald-800' : ''}">${escapeHtml(row.mode)}</td>
+              <td class="p-2">${escapeHtml(row.description)}</td>
+              <td class="p-2 ${txtCls}">${row.answerable_correctness.toFixed(2)}%</td>
+              <td class="p-2 ${txtCls}">${row.multi_hop_correctness.toFixed(2)}%</td>
+              <td class="p-2 ${txtCls}">${row.faithfulness.toFixed(2)}%</td>
+              <td class="p-2 ${txtCls}">${row.refusal_accuracy.toFixed(0)}%</td>
+              <td class="p-2 ${falseRefusalCls}">${row.false_refusal_count}</td>
+              <td class="p-2">${row.avg_latency_ms.toFixed(1)} ms</td>
+              <td class="p-2">${row.avg_tokens.toFixed(1)}</td>
+            </tr>
+          `;
+        }).join('');
+
+        if (data.cases && data.cases.length) {
+          casesContainer.innerHTML = data.cases.map(c => `
+            <div class="p-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800">
+              <div class="font-semibold text-slate-800 dark:text-slate-100">${escapeHtml(c.title)}</div>
+              <p class="text-slate-600 dark:text-slate-400 mt-1">${escapeHtml(c.desc)}</p>
+            </div>
+          `).join('');
+        }
+      } catch (e) {
+        tbody.innerHTML = `<tr><td colspan="9" class="p-4 text-center text-rose-600 dark:text-rose-400">加载评测报告失败: ${escapeHtml(e.message)}</td></tr>`;
+      }
+    }
+
+    $('evalModal').addEventListener('toggle', e => e.newState === 'open' && loadEvalResults());
+    $('evalModal').addEventListener('click', e => !('closedBy' in e.currentTarget) && e.target === e.currentTarget && e.currentTarget.close());
+
+    function handleInputKeydown(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        askQuestion();
+      }
+    }
+
+    async function checkHealth() {
+      try {
+        const data = await apiRequest('/health');
+        $('healthModel').textContent = data.model_name;
+        $('healthEmbedding').textContent = data.embedding_model;
+        $('healthChunks').textContent = `${data.total_chunks} Chunks`;
+        if (data.cache_stats) updateCacheUI(data.cache_stats);
+      } catch (e) {
+        $('healthModel').textContent = '服务离线';
+        $('healthEmbedding').textContent = '';
+        $('healthChunks').textContent = '';
+      }
+    }
+
+    function updateCacheUI(stats) {
+      $('cacheEntries').textContent = `${stats.entries}`;
+      $('cacheHitMiss').textContent = `${stats.hits}/${stats.misses}`;
+      $('cacheHitRate').textContent = `${(stats.hit_rate * 100).toFixed(0)}%`;
+    }
+
+    async function refreshCacheStats() {
+      try {
+        updateCacheUI(await apiRequest('/cache/stats'));
+      } catch (e) {}
+    }
+
+    async function clearCache() {
+      try {
+        await apiRequest('/cache/clear', { method: 'POST' });
+        await refreshCacheStats();
+      } catch (e) {}
+    }
+
+    async function loadDocuments() {
+      const listEl = $('docList');
+      try {
+        const data = await apiRequest('/documents');
+        if (!data.documents || !data.documents.length) {
+          listEl.innerHTML = '<li class="text-slate-400 dark:text-slate-500">暂无文档</li>';
+          return;
+        }
+        listEl.innerHTML = data.documents.map(doc => {
+          const isIndexed = doc.is_indexed ?? doc.indexed ?? false;
+          const tag = isIndexed
+            ? `<span class="text-emerald-600 dark:text-emerald-400 font-medium">${doc.chunk_count}块</span>`
+            : `<span class="text-slate-400 dark:text-slate-500">待索引</span>`;
+          return `
+            <li class="px-2 py-1.5 rounded bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-between gap-2 text-[11px]">
+              <span class="truncate text-slate-700 dark:text-slate-300" title="${doc.filename}">${doc.filename}</span>
+              <span class="shrink-0">${tag}</span>
+            </li>
+          `;
+        }).join('');
+      } catch (e) {
+        listEl.innerHTML = `<li class="text-rose-600 dark:text-rose-400">加载失败</li>`;
+      }
+    }
+
+    async function uploadFile() {
+      const input = $('fileInput');
+      if (!input.files || !input.files.length) return;
+      const formData = new FormData();
+      formData.append('file', input.files[0]);
+      try {
+        await apiRequest('/documents/upload', { method: 'POST', body: formData });
+        input.value = '';
+        await loadDocuments();
+      } catch (e) {
+        alert(e.message);
+      }
+    }
+
+    async function buildIndex(appendChatEvent = false) {
+      const btn = $('indexBtn');
+      const box = $('indexResultBox');
+      btn.disabled = true;
+      btn.textContent = '构建中...';
+      box.classList.remove('hidden');
+      box.textContent = '正在构建索引...';
+
+      try {
+        const payload = {
+          mode: $('indexMode').value,
+          chunk_size: parseInt($('chunkSize').value, 10),
+          overlap: parseInt($('chunkOverlap').value, 10),
+          collection_name: 'enterprise_kb'
+        };
+        const data = await apiRequest('/index', { method: 'POST', body: payload });
+        const r = data.index_result;
+        const addedFiles = r.added_or_updated || [];
+        const skippedFiles = r.skipped || [];
+        const elapsedMs = r.latency_ms ?? 0;
+        const totalChunks = r.total_chunks ?? 0;
+
+        box.innerHTML = `${r.effective_mode} (${elapsedMs}ms) · 新增 ${addedFiles.length} · 跳过 ${skippedFiles.length} · 共 ${totalChunks} 块`;
+
+        if (appendChatEvent) {
+          const container = $('messagesContainer');
+          const div = document.createElement('div');
+          div.className = 'rounded-lg bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-3.5 py-2 text-xs text-slate-700 dark:text-slate-300';
+          div.textContent = `索引检查完成 (${r.effective_mode}, ${elapsedMs}ms)：跳过未变更文档 ${skippedFiles.length} 份，当前共 ${totalChunks} Chunks。`;
+          container.appendChild(div);
+          scrollToBottom();
+        }
+
+        await loadDocuments();
+        await checkHealth();
+      } catch (e) {
+        box.textContent = `错误: ${e.message}`;
+      } finally {
+        btn.disabled = false;
+        btn.textContent = '构建索引';
+      }
+    }
+
+    function getPathTag(path) {
+      const p = (path || '').toLowerCase();
+      if (p === 'normal') return '<span class="px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 font-semibold">normal</span>';
+      if (p === 'fallback') return '<span class="px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 font-semibold">fallback</span>';
+      if (p === 'refusal') return '<span class="px-1.5 py-0.5 rounded bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 font-semibold">refusal</span>';
+      return '<span class="px-1.5 py-0.5 rounded bg-rose-100 dark:bg-rose-900 text-rose-800 dark:text-rose-200 font-semibold">error</span>';
+    }
+
+    function scrollToBottom() {
+      const timeline = $('chatTimeline');
+      timeline.scrollTo({ top: timeline.scrollHeight, behavior: 'smooth' });
+    }
+
+    async function executeQuery(q, options = {}) {
+      const cleanQ = (q || '').trim();
+      if (!cleanQ) return;
+
+      const mode = options.mode || $('askMode').value;
+      const recallK = options.recallK ?? parseInt($('recallK').value, 10);
+      const topK = options.topK ?? parseInt($('topK').value, 10);
+      const useCache = options.useCache ?? $('useCacheToggle').checked;
+
+      const btn = $('askBtn');
+      const inputEl = $('queryInput');
+      btn.disabled = true;
+      inputEl.value = '';
+
+      const turnId = ++turnSeq;
+      const container = $('messagesContainer');
+
+      const turnWrapper = document.createElement('div');
+      turnWrapper.className = 'space-y-2.5';
+      turnWrapper.innerHTML = `
+        <div class="flex justify-end">
+          <div class="max-w-xl bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 rounded-lg rounded-tr-sm px-4 py-2.5 text-sm leading-relaxed whitespace-pre-wrap break-words">${escapeHtml(cleanQ)}</div>
+        </div>
+        <div id="assistant-card-${turnId}" class="bg-white dark:bg-slate-900 rounded-lg rounded-tl-sm border border-slate-200 dark:border-slate-800 px-4 py-3.5 space-y-2 text-slate-900 dark:text-slate-100">
+          <div class="text-xs text-slate-400 dark:text-slate-500">思考中...</div>
+        </div>
+      `;
+      container.appendChild(turnWrapper);
+      scrollToBottom();
+
+      try {
+        const data = await apiRequest('/ask', {
+          method: 'POST',
+          body: {
+            query: cleanQ,
+            mode: mode,
+            recall_k: recallK,
+            top_k: topK,
+            use_cache: useCache,
+            collection_name: 'enterprise_kb'
+          }
+        });
+
+        const cacheTag = data.cache_hit
+          ? '<span class="px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-200 font-medium">缓存命中</span>'
+          : '';
+        const distStr = data.best_distance !== null && data.best_distance !== undefined ? data.best_distance : '-';
+        const { html: renderedAnswer, popoversHtml } = renderMarkdownWithCitations(data.answer, turnId, cleanQ, data);
+
+        const assistantCard = $(`assistant-card-${turnId}`);
+        assistantCard.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-400 dark:text-slate-500 pb-1.5 border-b border-slate-100 dark:border-slate-800">
+            <div class="flex items-center gap-1.5">
+              ${getPathTag(data.path)}
+              ${cacheTag}
+              <span>${escapeHtml(mode)}</span>
+            </div>
+            <div class="flex items-center gap-2 font-mono">
+              <span>d=${distStr}</span>
+              <span>${data.latency_ms}ms</span>
+              <span>${data.token_usage.total} tok</span>
+              <span>ctx ${data.contexts.length}/${data.docs.length}</span>
+            </div>
+          </div>
+          <div class="text-sm leading-7 break-words">${renderedAnswer}</div>
+          ${popoversHtml}
+        `;
+
+        await refreshCacheStats();
+        scrollToBottom();
+      } catch (e) {
+        $(`assistant-card-${turnId}`).innerHTML =
+          `<div class="text-rose-600 dark:text-rose-400 text-xs">错误: ${escapeHtml(e.message)}</div>`;
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    function askQuestion() {
+      const q = $('queryInput').value;
+      return executeQuery(q);
+    }
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function runAcceptanceDemo() {
+      const btn = $('demoBtn');
+      btn.disabled = true;
+      btn.textContent = '演示运行中...';
+
+      // 演示流水线：构建索引 -> 遍历执行典型示例 -> 测试缓存命中（单数据源，无任何重复硬编码）
+      const demoPlan = [
+        { action: 'index', mode: 'incremental' },
+        { action: 'ask', sampleIdx: 0, mode: 'optimized' },
+        { action: 'ask', sampleIdx: 1, mode: 'optimized' },
+        { action: 'ask', sampleIdx: 3, mode: 'optimized' },
+        { action: 'ask', sampleIdx: 0, mode: 'optimized', useCache: true }
+      ];
+
+      for (const step of demoPlan) {
+        if (step.action === 'index') {
+          $('indexMode').value = step.mode;
+          await buildIndex(true);
+        } else if (step.action === 'ask') {
+          const sample = sampleQuestions[step.sampleIdx];
+          if (sample) {
+            $('askMode').value = step.mode;
+            $('useCacheToggle').checked = Boolean(step.useCache);
+            await executeQuery(sample.query, {
+              mode: step.mode,
+              useCache: Boolean(step.useCache)
+            });
+          }
+        }
+        await sleep(1000);
+      }
+
+      btn.disabled = false;
+      btn.textContent = '一键演示';
+    }
+
+    checkHealth();
+    loadDocuments();
+    loadSamples();
+  </script>
+</body>
+</html>

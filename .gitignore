@@ -1,0 +1,20 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Secrets (NEVER commit real API keys)
+.env
+
+# Local vector database, runtime logs & large model weights
+data/chroma_db/
+data/index_state.json
+outputs/qa_logs.jsonl
+models/
+.DS_Store
